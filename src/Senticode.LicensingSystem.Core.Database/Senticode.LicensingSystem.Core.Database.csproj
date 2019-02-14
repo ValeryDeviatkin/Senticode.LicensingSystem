@@ -67,10 +67,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include=".config\app.config" />
-    <None Include=".config\packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="DatabaseServices\" />
     <Folder Include="Properties\" />
   </ItemGroup>
