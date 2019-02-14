@@ -1,0 +1,100 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Senticode.LicensingSystem.Application", "src\Senticode.LicensingSystem.Application\Senticode.LicensingSystem.Application.csproj", "{089A9D03-153B-4482-9202-BB196A7CAA91}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{79A63D9B-80E4-4E49-8F0E-994A9F6C09AF}"
+	ProjectSection(SolutionItems) = preProject
+		ToDoList.txt = ToDoList.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DugTools.WPF.MVVM", "src\Tools\MVVM\DugTools.WPF.MVVM.csproj", "{D9374A95-C718-410F-8B4B-0C78E067ECBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DugTools.WPF.Tools.Core", "src\Tools\Core\DugTools.WPF.Tools.Core.csproj", "{5177D22F-56FE-4B8E-A50A-4A8BB1A8CA78}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{7B61E3D2-506D-451A-9B40-EA9DD5F7E3B9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{3345B283-B4D8-4B28-8130-7D7F001CA7A9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{AAA3869B-2AC2-4278-9385-75B0FA616A8C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{87D5BAE8-E80A-4DBC-804B-AF69B38DC7A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Senticode.LicensingSystem.Common.Interfaces", "src\Senticode.LicensingSystem.Common.Interfaces\Senticode.LicensingSystem.Common.Interfaces.csproj", "{EE15AA29-0292-4F7A-A2D3-5CBB95228BB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Senticode.LicensingSystem.Common.Models", "src\Senticode.LicensingSystem.Common.Models\Senticode.LicensingSystem.Common.Models.csproj", "{FC2A1124-2934-4E7E-9770-77B6DB8964C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Senticode.LicensingSystem.Core.AssemblyAgregator", "src\Senticode.LicensingSystem.Core.AssemblyAgregator\Senticode.LicensingSystem.Core.AssemblyAgregator.csproj", "{B02C834B-2C51-4243-B20C-48840222D09B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Senticode.LicensingSystem.Core.Database", "src\Senticode.LicensingSystem.Core.Database\Senticode.LicensingSystem.Core.Database.csproj", "{9E276DA2-C666-4C99-B7CB-947C66DE2454}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Senticode.LicensingSystem.Core.Services", "src\Senticode.LicensingSystem.Core.Services\Senticode.LicensingSystem.Core.Services.csproj", "{DA1B9DC8-A7CD-453E-BD3B-3C440B203C32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Senticode.LicensingSystem.TestFramework", "tests\Senticode.LicensingSystem.TestFramework\Senticode.LicensingSystem.TestFramework.csproj", "{D44C56A6-0B53-4D32-9476-C5F0022F27FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Senticode.LicensingSystem.UnitTests", "tests\Senticode.LicensingSystem.UnitTests\Senticode.LicensingSystem.UnitTests.csproj", "{826E2A6F-0FE9-44AF-98B0-697C2CB7B8B4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{089A9D03-153B-4482-9202-BB196A7CAA91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{089A9D03-153B-4482-9202-BB196A7CAA91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{089A9D03-153B-4482-9202-BB196A7CAA91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{089A9D03-153B-4482-9202-BB196A7CAA91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9374A95-C718-410F-8B4B-0C78E067ECBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9374A95-C718-410F-8B4B-0C78E067ECBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9374A95-C718-410F-8B4B-0C78E067ECBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9374A95-C718-410F-8B4B-0C78E067ECBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5177D22F-56FE-4B8E-A50A-4A8BB1A8CA78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5177D22F-56FE-4B8E-A50A-4A8BB1A8CA78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5177D22F-56FE-4B8E-A50A-4A8BB1A8CA78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5177D22F-56FE-4B8E-A50A-4A8BB1A8CA78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE15AA29-0292-4F7A-A2D3-5CBB95228BB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE15AA29-0292-4F7A-A2D3-5CBB95228BB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE15AA29-0292-4F7A-A2D3-5CBB95228BB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE15AA29-0292-4F7A-A2D3-5CBB95228BB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC2A1124-2934-4E7E-9770-77B6DB8964C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC2A1124-2934-4E7E-9770-77B6DB8964C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC2A1124-2934-4E7E-9770-77B6DB8964C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC2A1124-2934-4E7E-9770-77B6DB8964C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B02C834B-2C51-4243-B20C-48840222D09B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B02C834B-2C51-4243-B20C-48840222D09B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B02C834B-2C51-4243-B20C-48840222D09B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B02C834B-2C51-4243-B20C-48840222D09B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E276DA2-C666-4C99-B7CB-947C66DE2454}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E276DA2-C666-4C99-B7CB-947C66DE2454}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E276DA2-C666-4C99-B7CB-947C66DE2454}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E276DA2-C666-4C99-B7CB-947C66DE2454}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA1B9DC8-A7CD-453E-BD3B-3C440B203C32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA1B9DC8-A7CD-453E-BD3B-3C440B203C32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA1B9DC8-A7CD-453E-BD3B-3C440B203C32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA1B9DC8-A7CD-453E-BD3B-3C440B203C32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D44C56A6-0B53-4D32-9476-C5F0022F27FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D44C56A6-0B53-4D32-9476-C5F0022F27FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D44C56A6-0B53-4D32-9476-C5F0022F27FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D44C56A6-0B53-4D32-9476-C5F0022F27FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{826E2A6F-0FE9-44AF-98B0-697C2CB7B8B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{826E2A6F-0FE9-44AF-98B0-697C2CB7B8B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{826E2A6F-0FE9-44AF-98B0-697C2CB7B8B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{826E2A6F-0FE9-44AF-98B0-697C2CB7B8B4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D9374A95-C718-410F-8B4B-0C78E067ECBE} = {7B61E3D2-506D-451A-9B40-EA9DD5F7E3B9}
+		{5177D22F-56FE-4B8E-A50A-4A8BB1A8CA78} = {7B61E3D2-506D-451A-9B40-EA9DD5F7E3B9}
+		{EE15AA29-0292-4F7A-A2D3-5CBB95228BB3} = {3345B283-B4D8-4B28-8130-7D7F001CA7A9}
+		{FC2A1124-2934-4E7E-9770-77B6DB8964C0} = {3345B283-B4D8-4B28-8130-7D7F001CA7A9}
+		{B02C834B-2C51-4243-B20C-48840222D09B} = {87D5BAE8-E80A-4DBC-804B-AF69B38DC7A1}
+		{9E276DA2-C666-4C99-B7CB-947C66DE2454} = {87D5BAE8-E80A-4DBC-804B-AF69B38DC7A1}
+		{DA1B9DC8-A7CD-453E-BD3B-3C440B203C32} = {87D5BAE8-E80A-4DBC-804B-AF69B38DC7A1}
+		{D44C56A6-0B53-4D32-9476-C5F0022F27FC} = {AAA3869B-2AC2-4278-9385-75B0FA616A8C}
+		{826E2A6F-0FE9-44AF-98B0-697C2CB7B8B4} = {AAA3869B-2AC2-4278-9385-75B0FA616A8C}
+	EndGlobalSection
+EndGlobal
