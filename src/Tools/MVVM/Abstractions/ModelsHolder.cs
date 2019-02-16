@@ -12,20 +12,6 @@ namespace Senticode.WPF.Tools.MVVM.Abstractions
         public void SetModel(ModelBase model)
         {
             _models.Value.Add(model.GetType().Name, model);
-            var weekmh = new WeakReference<ModelsHolder>(this);
-            ModelsHolder mh;
-
-            model.PropertyChanged += (sender, args) =>
-            {
-                weekmh.TryGetTarget(out mh);
-                mh?.OnPropertyChanged(args.PropertyName);
-            };
-
-            model.PropertyChanging += (sender, args) =>
-            {
-                weekmh.TryGetTarget(out mh);
-                mh?.OnPropertyChanging(args.PropertyName);
-            };
         }
 
         public T GetFromModel<T, TModel>(Func<TModel, T> func)

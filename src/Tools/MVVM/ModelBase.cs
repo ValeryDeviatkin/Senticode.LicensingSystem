@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Senticode.WPF.Tools.MVVM.Abstractions;
 using Senticode.WPF.Tools.Core.Helpers;
+using Senticode.WPF.Tools.MVVM.Abstractions;
 
 namespace Senticode.WPF.Tools.MVVM
 {
-    public abstract class ModelBase: ObesrvableObject
+    public abstract class ModelBase : ObesrvableObject
     {
         private readonly Dictionary<string, PropertyInfo> _properties;
 
