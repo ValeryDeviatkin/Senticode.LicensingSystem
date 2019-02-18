@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\IIdentifier.cs" />
     <Compile Include="ResourceKeys.cs" />
     <Compile Include="Services\ILocalize.cs" />
   </ItemGroup>

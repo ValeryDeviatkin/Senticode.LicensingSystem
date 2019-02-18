@@ -7,5 +7,6 @@ namespace Senticode.LicensingSystem.Common.Models
     {
         int IIdentifier.Id { get; set; }
         public string Serial { get; set; }
+        public int KeyUserId { get; set; } //f, m:1
     }
 }

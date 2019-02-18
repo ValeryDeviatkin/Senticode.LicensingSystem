@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Senticode.WPF.Tools.MVVM;
+using System;
 using Senticode.LicensingSystem.Common.Interfaces.Models;
-using Senticode.WPF.Tools.MVVM;
 
 namespace Senticode.LicensingSystem.Common.Models
 {
@@ -8,7 +8,6 @@ namespace Senticode.LicensingSystem.Common.Models
     {
         int IIdentifier.Id { get; set; }
         public string Value { get; set; }
-        public int OrganizationId { get; set; } //f, m:1
         public int ProductId { get; set; } //f, m:1
         public int DeviceId { get; set; } //f, m:1
         public DateTime IssueDate { get; set; }

@@ -44,6 +44,26 @@
   <ItemGroup>
     <Folder Include="Properties\" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Contract.cs" />
+    <Compile Include="Device.cs" />
+    <Compile Include="Key.cs" />
+    <Compile Include="KeyUser.cs" />
+    <Compile Include="Organization.cs" />
+    <Compile Include="Position.cs" />
+    <Compile Include="Product.cs" />
+    <Compile Include="User.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Senticode.LicensingSystem.Common.Interfaces\Senticode.LicensingSystem.Common.Interfaces.csproj">
+      <Project>{EE15AA29-0292-4F7A-A2D3-5CBB95228BB3}</Project>
+      <Name>Senticode.LicensingSystem.Common.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tools\MVVM\DugTools.WPF.MVVM.csproj">
+      <Project>{D9374A95-C718-410F-8B4B-0C78E067ECBE}</Project>
+      <Name>DugTools.WPF.MVVM</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
