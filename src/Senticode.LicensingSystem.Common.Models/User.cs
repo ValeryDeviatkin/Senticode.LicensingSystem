@@ -12,7 +12,7 @@ namespace Senticode.LicensingSystem.Common.Models
         public bool IsWritingAvailable { get; set; }
         public bool IsReadingKeysAvailable { get; set; }
         public bool HasAccessToWorkingKeys { get; set; }
-        public bool HasAccessToTestKey { get; set; }
+        public bool HasAccessToTestKeys { get; set; }
         public bool IsAdmin { get; set; }
     }
 }

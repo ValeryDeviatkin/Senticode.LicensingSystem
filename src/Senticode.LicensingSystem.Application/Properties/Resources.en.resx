@@ -117,6 +117,72 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Device" xml:space="preserve">
+    <value>Device</value>
+  </data>
+  <data name="EndDate" xml:space="preserve">
+    <value>End Date</value>
+  </data>
+  <data name="ExtensionReason" xml:space="preserve">
+    <value>Extension Reason</value>
+  </data>
+  <data name="HasAccessToTestKeys" xml:space="preserve">
+    <value>Has Access To Test Keys</value>
+  </data>
+  <data name="HasAccessToWorkingKeys" xml:space="preserve">
+    <value>Has Access ToWorking Keys</value>
+  </data>
+  <data name="IsAdmin" xml:space="preserve">
+    <value>Is Admin</value>
+  </data>
+  <data name="IsReadingAvailable" xml:space="preserve">
+    <value>Is Reading Available</value>
+  </data>
+  <data name="IsReadingKeysAvailable" xml:space="preserve">
+    <value>Is Reading Keys Available</value>
+  </data>
+  <data name="IssueDate" xml:space="preserve">
+    <value>Issue Date</value>
+  </data>
+  <data name="IsWritingAvailable" xml:space="preserve">
+    <value>Is Writing Available</value>
+  </data>
+  <data name="KeyLimit" xml:space="preserve">
+    <value>Key Limit</value>
+  </data>
+  <data name="KeyUser" xml:space="preserve">
+    <value>Key User</value>
+  </data>
+  <data name="KeyValue" xml:space="preserve">
+    <value>Key Value</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="Organization" xml:space="preserve">
+    <value>Organization</value>
+  </data>
+  <data name="Position" xml:space="preserve">
+    <value>Position</value>
+  </data>
+  <data name="Product" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="Serial" xml:space="preserve">
+    <value>Serial</value>
+  </data>
+  <data name="StartDate" xml:space="preserve">
+    <value>Start Date</value>
+  </data>
   <data name="Title" xml:space="preserve">
     <value>Licensing System</value>
   </data>

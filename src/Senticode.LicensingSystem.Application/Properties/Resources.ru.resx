@@ -117,6 +117,75 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Cancel" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="Device" xml:space="preserve">
+    <value>Устройство</value>
+  </data>
+  <data name="EndDate" xml:space="preserve">
+    <value>Дата Окончания</value>
+  </data>
+  <data name="ExtensionReason" xml:space="preserve">
+    <value>Причина Продления</value>
+  </data>
+  <data name="HasAccessToTestKeys" xml:space="preserve">
+    <value>Имеет Ли Доступ К Тестовым Ключам</value>
+  </data>
+  <data name="HasAccessToWorkingKeys" xml:space="preserve">
+    <value>Имеет Ли Доступ К Рабочим Ключам</value>
+  </data>
+  <data name="IsAdmin" xml:space="preserve">
+    <value>Являеется Ли Администратором</value>
+  </data>
+  <data name="IsReadingAvailable" xml:space="preserve">
+    <value>Доступно Ли Чтение</value>
+  </data>
+  <data name="IsReadingKeysAvailable" xml:space="preserve">
+    <value>Доступно Ли Чтение Ключей</value>
+  </data>
+  <data name="IssueDate" xml:space="preserve">
+    <value>Дата Выдачи</value>
+  </data>
+  <data name="IsTestKey" xml:space="preserve">
+    <value>Тестовый Ли Ключ</value>
+  </data>
+  <data name="IsWritingAvailable" xml:space="preserve">
+    <value>Доступна Ли Запись</value>
+  </data>
+  <data name="KeyLimit" xml:space="preserve">
+    <value>Максимальное Число Ключей</value>
+  </data>
+  <data name="KeyUser" xml:space="preserve">
+    <value>Пользователь Ключа</value>
+  </data>
+  <data name="KeyValue" xml:space="preserve">
+    <value>Значение Ключа</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Логин</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Название</value>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>Выполнить</value>
+  </data>
+  <data name="Organization" xml:space="preserve">
+    <value>Компания</value>
+  </data>
+  <data name="Position" xml:space="preserve">
+    <value>Должность</value>
+  </data>
+  <data name="Product" xml:space="preserve">
+    <value>Продукт</value>
+  </data>
+  <data name="Serial" xml:space="preserve">
+    <value>Серийный Номер</value>
+  </data>
+  <data name="StartDate" xml:space="preserve">
+    <value>Дата Окончания</value>
+  </data>
   <data name="Title" xml:space="preserve">
     <value>Система Учета Выданных Лицензионных Ключей</value>
   </data>

@@ -7,7 +7,7 @@ namespace Senticode.LicensingSystem.Common.Models
     {
         int IIdentifier.Id { get; set; }
         public string Name { get; set; }
-        public int PositionId { get; set; } //f, m:1
-        public int OrganizationId { get; set; } //f, m:1
+        public Position Position { get; set; } //f, m:1
+        public Organization Organization { get; set; } //f, m:1
     }
 }

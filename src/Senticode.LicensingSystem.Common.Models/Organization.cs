@@ -1,11 +1,9 @@
-﻿using Senticode.LicensingSystem.Common.Interfaces.Models;
-using Senticode.WPF.Tools.MVVM;
+﻿using Senticode.WPF.Tools.MVVM;
 
 namespace Senticode.LicensingSystem.Common.Models
 {
-    public class Organization : ModelBase, IIdentifier
+    public class Organization : ModelBase
     {
-        int IIdentifier.Id { get; set; }
         public string Name { get; set; }
     }
 }

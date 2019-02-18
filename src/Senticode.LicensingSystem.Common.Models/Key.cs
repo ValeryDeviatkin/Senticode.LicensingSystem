@@ -1,15 +1,13 @@
 ﻿using Senticode.WPF.Tools.MVVM;
 using System;
-using Senticode.LicensingSystem.Common.Interfaces.Models;
 
 namespace Senticode.LicensingSystem.Common.Models
 {
-    public class Key : ModelBase, IIdentifier
+    public class Key : ModelBase
     {
-        int IIdentifier.Id { get; set; }
         public string Value { get; set; }
-        public int ProductId { get; set; } //f, m:1
-        public int DeviceId { get; set; } //f, m:1
+        public Product Product { get; set; } //f, m:1
+        public Device Device { get; set; } //f, m:1
         public DateTime IssueDate { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }

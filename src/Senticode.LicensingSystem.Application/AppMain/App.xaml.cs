@@ -3,6 +3,7 @@ using Senticode.LicensingSystem.Application.Commands;
 using Senticode.LicensingSystem.Application.Extensions;
 using Senticode.LicensingSystem.Application.Properties;
 using Senticode.LicensingSystem.Application.ViewModels;
+using Senticode.LicensingSystem.Application.Views.EditWindows;
 using Senticode.LicensingSystem.Core.AssemblyAgregator;
 using Senticode.WPF.Tools.Core;
 using Senticode.WPF.Tools.Core.Interfaces;
@@ -28,6 +29,14 @@ namespace Senticode.LicensingSystem.Application.AppMain
                     typeof(Resources).Assembly));
             container.RegisterSingleton<AppSettingsBase, AppSettings>(new InjectionConstructor(container));
             container.RegisterSingleton<AppCommandsBase, AppCommands>(new InjectionConstructor(container));
+
+            //Windows
+            container.RegisterType<EditUserWindow>();
+            container.RegisterType<EditKeyWindow>();
+            container.RegisterType<EditKeyUserWindow>();
+            container.RegisterType<EditDeviceWindow>();
+            container.RegisterType<EditContractWindow>();
+            container.RegisterType<EditEntityWithOnlyNameWindow>();
 
             //ViewModels
             container.RegisterSingleton<ViewModelBase, MainViewModel>(new InjectionConstructor(container));

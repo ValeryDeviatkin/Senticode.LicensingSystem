@@ -5,10 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:l="clr-namespace:Senticode.LicensingSystem.Application.Extensions"
         xmlns:i="clr-namespace:Senticode.LicensingSystem.Common.Interfaces;assembly=Senticode.LicensingSystem.Common.Interfaces"
+        xmlns:views="clr-namespace:Senticode.LicensingSystem.Application.Views"
         mc:Ignorable="d"
         Title="{l:Localize {x:Static i:ResourceKeys.Title}}">
-    
+
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <views:MenuBar Grid.Row="0"/>
     </Grid>
 </Window>

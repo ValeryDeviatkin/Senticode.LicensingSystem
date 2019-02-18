@@ -1,12 +1,10 @@
-﻿using Senticode.LicensingSystem.Common.Interfaces.Models;
-using Senticode.WPF.Tools.MVVM;
+﻿using Senticode.WPF.Tools.MVVM;
 
 namespace Senticode.LicensingSystem.Common.Models
 {
-    public class Device : ModelBase, IIdentifier
+    public class Device : ModelBase
     {
-        int IIdentifier.Id { get; set; }
         public string Serial { get; set; }
-        public int KeyUserId { get; set; } //f, m:1
+        public KeyUser KeyUser { get; set; } //f, m:1
     }
 }
