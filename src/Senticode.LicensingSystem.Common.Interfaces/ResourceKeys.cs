@@ -26,6 +26,13 @@
         public static readonly string HasAccessToWorkingKeys = nameof(HasAccessToWorkingKeys);
         public static readonly string HasAccessToTestKeys = nameof(HasAccessToTestKeys);
         public static readonly string IsAdmin = nameof(IsAdmin);
+        public static readonly string FindKeys = nameof(FindKeys);
+        public static readonly string RemainingTerm = nameof(RemainingTerm);
+        public static readonly string Add = nameof(Add);
+        public static readonly string Key = nameof(Key);
+        public static readonly string Contract = nameof(Contract);
+        public static readonly string User = nameof(User);
+        public static readonly string Database = nameof(Database);
         //public static readonly string  = nameof();
     }
 }

@@ -25,6 +25,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -37,7 +39,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\..\packages\System.Runtime.CompilerServices.Unsafe.4.5.0\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
@@ -74,6 +85,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\AppCommands.AddCommand.cs" />
+    <Compile Include="Services\DialogProvider.cs" />
     <Compile Include="Views\EditWindows\EditContractWindow.xaml.cs">
       <DependentUpon>EditContractWindow.xaml</DependentUpon>
     </Compile>
@@ -91,6 +104,9 @@
     </Compile>
     <Compile Include="Views\EditWindows\EditUserWindow.xaml.cs">
       <DependentUpon>EditUserWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FindKeyWindow.xaml.cs">
+      <DependentUpon>FindKeyWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MenuBar.xaml.cs">
       <DependentUpon>MenuBar.xaml</DependentUpon>
@@ -116,6 +132,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\EditWindows\EditUserWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FindKeyWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -178,6 +198,10 @@
     <ProjectReference Include="..\Senticode.LicensingSystem.Common.Interfaces\Senticode.LicensingSystem.Common.Interfaces.csproj">
       <Project>{EE15AA29-0292-4F7A-A2D3-5CBB95228BB3}</Project>
       <Name>Senticode.LicensingSystem.Common.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Senticode.LicensingSystem.Common.Models\Senticode.LicensingSystem.Common.Models.csproj">
+      <Project>{FC2A1124-2934-4E7E-9770-77B6DB8964C0}</Project>
+      <Name>Senticode.LicensingSystem.Common.Models</Name>
     </ProjectReference>
     <ProjectReference Include="..\Senticode.LicensingSystem.Core.AssemblyAgregator\Senticode.LicensingSystem.Core.AssemblyAgregator.csproj">
       <Project>{B02C834B-2C51-4243-B20C-48840222D09B}</Project>

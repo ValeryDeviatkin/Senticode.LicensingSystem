@@ -13,25 +13,25 @@
             <TextBox Name="KeyValueBox"/>
         </GroupBox>
         <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.IssueDate}}">
-            <DatePicker Name="IssueDateBox"/>
+            <DatePicker/>
         </GroupBox>
         <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.StartDate}}">
-            <DatePicker Name="StartDateBox"/>
+            <DatePicker/>
         </GroupBox>
         <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.EndDate}}">
-            <DatePicker Name="EndDateBox"/>
+            <DatePicker/>
         </GroupBox>
         <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.Device}}">
-            <ComboBox Name="DeviceBox"/>
+            <ComboBox/>
         </GroupBox>
         <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.Product}}">
-            <ComboBox Name="ProductBox"/>
+            <ComboBox/>
         </GroupBox>
         <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.ExtensionReason}}">
-            <TextBox Name="ExtensionReasonBox"/>
+            <TextBox/>
         </GroupBox>
         <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.IsTestKey}}">
-            <CheckBox Name="IsTestKeyBox"/>
+            <CheckBox/>
         </GroupBox>
         <Button IsDefault="True" Click="Ok_OnClick"
                 Content="{e:Localize {x:Static i:ResourceKeys.Ok}}">

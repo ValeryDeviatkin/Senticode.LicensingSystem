@@ -32,7 +32,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\..\packages\System.Runtime.CompilerServices.Unsafe.4.5.0\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
@@ -59,11 +68,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseServicesinitializer.cs" />
+    <Compile Include="DatabaseServices\CrudService.cs" />
+    <Compile Include="DatabaseServices\EntityContext.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DatabaseServices\" />
-  </ItemGroup>
-  <ItemGroup>
+    <ProjectReference Include="..\Senticode.LicensingSystem.Common.Interfaces\Senticode.LicensingSystem.Common.Interfaces.csproj">
+      <Project>{EE15AA29-0292-4F7A-A2D3-5CBB95228BB3}</Project>
+      <Name>Senticode.LicensingSystem.Common.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Senticode.LicensingSystem.Common.Models\Senticode.LicensingSystem.Common.Models.csproj">
+      <Project>{fc2a1124-2934-4e7e-9770-77b6db8964c0}</Project>
+      <Name>Senticode.LicensingSystem.Common.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Tools\Core\DugTools.WPF.Tools.Core.csproj">
       <Project>{5177D22F-56FE-4B8E-A50A-4A8BB1A8CA78}</Project>
       <Name>DugTools.WPF.Tools.Core</Name>

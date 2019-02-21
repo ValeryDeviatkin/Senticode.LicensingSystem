@@ -189,4 +189,25 @@
   <data name="Title" xml:space="preserve">
     <value>Система Учета Выданных Лицензионных Ключей</value>
   </data>
+  <data name="FindKeys" xml:space="preserve">
+    <value>Поиск Ключей</value>
+  </data>
+  <data name="RemainingTerm" xml:space="preserve">
+    <value>Оставшийся Срок (дней)</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Добавить</value>
+  </data>
+  <data name="Contract" xml:space="preserve">
+    <value>Контраст</value>
+  </data>
+  <data name="Database" xml:space="preserve">
+    <value>База Данных</value>
+  </data>
+  <data name="Key" xml:space="preserve">
+    <value>Ключ</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>Пользователь</value>
+  </data>
 </root>

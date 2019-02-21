@@ -19,7 +19,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>out\bin\Debug\</OutputPath>
-	<BaseIntermediateOutputPath>out\obj\</BaseIntermediateOutputPath>
+    <BaseIntermediateOutputPath>out\obj\</BaseIntermediateOutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -28,7 +28,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>out\bin\Release\</OutputPath>
-	<BaseIntermediateOutputPath>out\obj\</BaseIntermediateOutputPath>
+    <BaseIntermediateOutputPath>out\obj\</BaseIntermediateOutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -54,13 +54,9 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Extensions\ApplicationEx.cs" />
-    <Compile Include="Dialogs\DialogFactory.cs" />
-    <Compile Include="Extensions\ModelBaseEx.cs" />
     <Compile Include="ModelBase.cs" />
     <Compile Include="Abstractions\ModelsHolder.cs" />
     <Compile Include="Abstractions\ObesrvableObject.cs" />
-    <Compile Include="ViewBase.cs" />
     <Compile Include="ViewModelBase.cs" />
   </ItemGroup>
   <ItemGroup>

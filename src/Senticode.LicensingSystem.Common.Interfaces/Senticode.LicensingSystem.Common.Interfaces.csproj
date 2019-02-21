@@ -32,7 +32,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -42,12 +51,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\IId.cs" />
     <Compile Include="Models\IIdentifier.cs" />
+    <Compile Include="Models\IKeyUserIdentifier.cs" />
     <Compile Include="ResourceKeys.cs" />
+    <Compile Include="Services\ICrud.cs" />
+    <Compile Include="Services\IEntityContext.cs" />
     <Compile Include="Services\ILocalize.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Enums\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tools\Core\DugTools.WPF.Tools.Core.csproj">
+      <Project>{5177D22F-56FE-4B8E-A50A-4A8BB1A8CA78}</Project>
+      <Name>DugTools.WPF.Tools.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

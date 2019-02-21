@@ -13,14 +13,13 @@
             <TextBox Name="SerialBox"/>
         </GroupBox>
         <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.KeyUser}}">
-            <ComboBox Name="KeyUserBox"/>
+            <ComboBox/>
         </GroupBox>
         <Button IsDefault="True" Click="Ok_OnClick"
                 Content="{e:Localize {x:Static i:ResourceKeys.Ok}}">
             <Button.IsEnabled>
                 <MultiBinding Converter="{c:MultiBindingBoolConverter}">
                     <Binding Path="(Validation.HasError)" ElementName="SerialBox"/>
-                    <Binding Path="(Validation.HasError)" ElementName="KeyUserBox"/>
                 </MultiBinding>
             </Button.IsEnabled>
         </Button>

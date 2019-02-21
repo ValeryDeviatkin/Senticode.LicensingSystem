@@ -63,18 +63,18 @@ namespace Senticode.WPF.Tools.Core.Helpers
             }
 
             var propertyInfos = new List<PropertyInfo>();
-
             var considered = new List<Type>();
             var queue = new Queue<Type>();
             considered.Add(type);
             queue.Enqueue(type);
+
             while (queue.Count > 0)
             {
                 var subType = queue.Dequeue();
+
                 foreach (var subInterface in subType.GetInterfaces())
                 {
                     if (considered.Contains(subInterface)) continue;
-
                     considered.Add(subInterface);
                     queue.Enqueue(subInterface);
                 }

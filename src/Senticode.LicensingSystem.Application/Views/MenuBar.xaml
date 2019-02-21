@@ -3,9 +3,43 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:e="clr-namespace:Senticode.LicensingSystem.Application.Extensions"
+             xmlns:i="clr-namespace:Senticode.LicensingSystem.Common.Interfaces;assembly=Senticode.LicensingSystem.Common.Interfaces"
              mc:Ignorable="d" >
-    
-    <Menu>
-        <!--todo-->
-    </Menu>
+
+    <Grid>
+        <Menu HorizontalAlignment="Left">
+            <MenuItem Header="{e:Localize {x:Static i:ResourceKeys.Database}}">
+                <MenuItem Header="{e:Localize {x:Static i:ResourceKeys.Position}}" />
+                <MenuItem Header="{e:Localize {x:Static i:ResourceKeys.Product}}" />
+                <MenuItem Header="{e:Localize {x:Static i:ResourceKeys.Device}}" />
+                <MenuItem Header="{e:Localize {x:Static i:ResourceKeys.KeyUser}}" />
+                <MenuItem Header="{e:Localize {x:Static i:ResourceKeys.Key}}" />
+                <MenuItem Header="{e:Localize {x:Static i:ResourceKeys.Organization}}" />
+                <MenuItem Header="{e:Localize {x:Static i:ResourceKeys.Contract}}" />
+                <MenuItem Header="{e:Localize {x:Static i:ResourceKeys.User}}" />
+            </MenuItem>
+            <MenuItem Header="{e:Localize {x:Static i:ResourceKeys.Add}}">
+                <MenuItem Header="{e:Localize {x:Static i:ResourceKeys.Position}}" />
+                <MenuItem Header="{e:Localize {x:Static i:ResourceKeys.Product}}" />
+                <MenuItem Header="{e:Localize {x:Static i:ResourceKeys.Device}}" />
+                <MenuItem Header="{e:Localize {x:Static i:ResourceKeys.KeyUser}}" />
+                <MenuItem Header="{e:Localize {x:Static i:ResourceKeys.Key}}" />
+                <MenuItem Header="{e:Localize {x:Static i:ResourceKeys.Organization}}" />
+                <MenuItem Header="{e:Localize {x:Static i:ResourceKeys.Contract}}" />
+                <MenuItem Header="{e:Localize {x:Static i:ResourceKeys.User}}" />
+            </MenuItem>
+        </Menu>
+        <Menu HorizontalAlignment="Right">
+            <MenuItem>
+                <MenuItem.Template>
+                    <ControlTemplate>
+                        <ComboBox ItemsSource="{Binding AppSettings.LocalizeService.AvailableImplementation}"
+                                  SelectedItem="{Binding AppSettings.LocalizeService.CultureContext}"
+                                  Margin="0" Padding="0" BorderThickness="0"/>
+                    </ControlTemplate>
+                </MenuItem.Template>
+            </MenuItem>
+        </Menu>
+    </Grid>
 </UserControl>

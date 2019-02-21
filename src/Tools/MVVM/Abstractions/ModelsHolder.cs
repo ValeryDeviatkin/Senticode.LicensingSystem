@@ -13,28 +13,29 @@ namespace Senticode.WPF.Tools.MVVM.Abstractions
         {
             _models.Value.Add(model.GetType().Name, model);
             var weekmh = new WeakReference<ModelsHolder>(this);
-            ModelsHolder mh;
 
             model.PropertyChanged += (sender, args) =>
             {
+                ModelsHolder mh;
                 weekmh.TryGetTarget(out mh);
                 mh?.OnPropertyChanged(args.PropertyName);
             };
 
             model.PropertyChanging += (sender, args) =>
             {
+                ModelsHolder mh;
                 weekmh.TryGetTarget(out mh);
                 mh?.OnPropertyChanging(args.PropertyName);
             };
         }
 
-        protected T GetFromModel<T, TModel>(Func<TModel, T> func)
+        protected T GetFromModel<TModel, T>(Func<TModel, T> func)
             where TModel : ModelBase
         {
-            return func.Invoke((TModel) _models.Value[typeof(TModel).Name]);
+            return func((TModel) _models.Value[typeof(TModel).Name]);
         }
 
-        protected T GetFromModel<T, TModel>([CallerMemberName] string propertyName = "")
+        protected T GetFromModel<TModel, T>([CallerMemberName] string propertyName = "")
             where TModel : ModelBase
         {
             var model = _models.Value[typeof(TModel).Name];

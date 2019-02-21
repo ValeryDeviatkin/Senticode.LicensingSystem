@@ -19,7 +19,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>out\bin\Debug\</OutputPath>
-	<BaseIntermediateOutputPath>out\obj\</BaseIntermediateOutputPath>
+    <BaseIntermediateOutputPath>out\obj\</BaseIntermediateOutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -28,7 +28,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>out\bin\Release\</OutputPath>
-	<BaseIntermediateOutputPath>out\obj\</BaseIntermediateOutputPath>
+    <BaseIntermediateOutputPath>out\obj\</BaseIntermediateOutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -55,7 +55,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppCommandsBase.cs" />
-    <Compile Include="ApplicationBase.cs" />
     <Compile Include="ApplicationInfo.cs" />
     <Compile Include="AppSettingsBase.cs" />
     <Compile Include="Command.cs" />
@@ -63,6 +62,7 @@
     <Compile Include="Extensions\LinqExtensions.cs" />
     <Compile Include="Helpers\PropertiesSupport.cs" />
     <Compile Include="Interfaces\IInitializer.cs" />
+    <Compile Include="ObservableRangeCollection.cs" />
     <Compile Include="ServiceLocator.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

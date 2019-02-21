@@ -27,7 +27,7 @@ namespace Senticode.WPF.Tools.MVVM
             }
 
             throw new PropertyNotFoundException(
-                $"{this.GetType().FullName} not contains property of {property}.");
+                $"{GetType().FullName} not contains property of {property}.");
         }
     }
 
