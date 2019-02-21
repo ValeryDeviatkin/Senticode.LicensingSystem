@@ -1,12 +1,13 @@
 ﻿using Senticode.LicensingSystem.Application.AppMain;
 using Senticode.LicensingSystem.Application.Commands;
 using Senticode.LicensingSystem.Application.Views.EditWindows;
+using Senticode.WPF.Tools.Core;
 using Senticode.WPF.Tools.MVVM;
 using Unity;
 
 namespace Senticode.LicensingSystem.Application.ViewModels
 {
-    internal class MainViewModel : ViewModelBase<AppCommands, AppSettings>
+    internal class MainViewModel : ViewModelBase<AppCommandsBase, AppSettingsBase>
     {
         public MainViewModel(IUnityContainer container) : base(container)
         {

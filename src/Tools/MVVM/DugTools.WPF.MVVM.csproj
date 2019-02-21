@@ -19,7 +19,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>out\bin\Debug\</OutputPath>
-    <BaseIntermediateOutputPath>out\obj\</BaseIntermediateOutputPath>
+	<BaseIntermediateOutputPath>out\obj\</BaseIntermediateOutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -28,47 +28,46 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>out\bin\Release\</OutputPath>
-    <BaseIntermediateOutputPath>out\obj\</BaseIntermediateOutputPath>
+	<BaseIntermediateOutputPath>out\obj\</BaseIntermediateOutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\System.Runtime.CompilerServices.Unsafe.4.5.0\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Unity.Abstractions, Version=4.0.3.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Unity.Abstractions">
       <HintPath>..\..\..\packages\Unity.5.9.4\lib\net47\Unity.Abstractions.dll</HintPath>
-      <Private>True</Private>
     </Reference>
-    <Reference Include="Unity.Container, Version=5.9.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Unity.5.9.4\lib\net47\Unity.Container.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Unity.Container, Version=5.8.11.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\..\..\sln\Senticode.PokerManager\packages\Unity.Container.5.8.11\lib\net47\Unity.Container.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\ApplicationEx.cs" />
+    <Compile Include="Dialogs\DialogFactory.cs" />
+    <Compile Include="Extensions\ModelBaseEx.cs" />
+    <Compile Include="ModelBase.cs" />
     <Compile Include="Abstractions\ModelsHolder.cs" />
     <Compile Include="Abstractions\ObesrvableObject.cs" />
-    <Compile Include="ModelBase.cs" />
+    <Compile Include="ViewBase.cs" />
     <Compile Include="ViewModelBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\DugTools.WPF.Tools.Core.csproj">
       <Project>{5177D22F-56FE-4B8E-A50A-4A8BB1A8CA78}</Project>
-      <Name>DugTools.WPF.Tools.Core</Name>
+      <Name>Senticode.WPF.Tools.Core</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

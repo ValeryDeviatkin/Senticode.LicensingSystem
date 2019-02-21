@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Senticode.WPF.Tools.Core.Helpers;
 using Senticode.WPF.Tools.MVVM.Abstractions;
+using Senticode.WPF.Tools.Core.Helpers;
 
 namespace Senticode.WPF.Tools.MVVM
 {
-    public abstract class ModelBase : ObesrvableObject
+    public abstract class ModelBase: ObesrvableObject
     {
         private readonly Dictionary<string, PropertyInfo> _properties;
 
@@ -26,7 +26,8 @@ namespace Senticode.WPF.Tools.MVVM
                 return propertyInfo.GetValue(this);
             }
 
-            throw new PropertyNotFoundException($"{GetType().FullName} not contains property of {property}.");
+            throw new PropertyNotFoundException(
+                $"{this.GetType().FullName} not contains property of {property}.");
         }
     }
 
@@ -34,6 +35,7 @@ namespace Senticode.WPF.Tools.MVVM
     {
         public PropertyNotFoundException(string message) : base(message)
         {
+
         }
     }
 }

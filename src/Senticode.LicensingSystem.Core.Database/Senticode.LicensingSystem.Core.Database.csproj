@@ -61,14 +61,13 @@
     <Compile Include="DatabaseServicesinitializer.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="DatabaseServices\" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Tools\Core\DugTools.WPF.Tools.Core.csproj">
       <Project>{5177D22F-56FE-4B8E-A50A-4A8BB1A8CA78}</Project>
       <Name>DugTools.WPF.Tools.Core</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DatabaseServices\" />
-    <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

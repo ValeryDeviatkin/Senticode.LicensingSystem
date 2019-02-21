@@ -11,7 +11,7 @@ namespace Senticode.WPF.Tools.MVVM
             Container = container;
         }
 
-        public IUnityContainer Container { get; }
+        protected IUnityContainer Container { get; }
     }
 
     public abstract class ViewModelBase<TAppCommands> : ViewModelBase
@@ -19,10 +19,10 @@ namespace Senticode.WPF.Tools.MVVM
     {
         protected ViewModelBase(IUnityContainer container) : base(container)
         {
-            AppCommands = container.Resolve<AppCommandsBase>();
+            AppCommands = container.Resolve<TAppCommands>();
         }
 
-        public AppCommandsBase AppCommands { get; }
+        public TAppCommands AppCommands { get; }
     }
 
     public abstract class ViewModelBase<TAppCommands, TAppSettings> : ViewModelBase<TAppCommands>
@@ -31,9 +31,9 @@ namespace Senticode.WPF.Tools.MVVM
     {
         protected ViewModelBase(IUnityContainer container) : base(container)
         {
-            AppSettings = container.Resolve<AppSettingsBase>();
+            AppSettings = container.Resolve<TAppSettings>();
         }
 
-        public AppSettingsBase AppSettings { get; }
+        public TAppSettings AppSettings { get; }
     }
 }

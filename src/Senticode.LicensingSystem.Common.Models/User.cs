@@ -1,9 +1,8 @@
 ﻿using Senticode.LicensingSystem.Common.Interfaces.Models;
-using Senticode.WPF.Tools.MVVM;
 
 namespace Senticode.LicensingSystem.Common.Models
 {
-    public class User : ModelBase, IIdentifier
+    public class User : IIdentifier
     {
         int IIdentifier.Id { get; set; }
         public string Password { get; set; }

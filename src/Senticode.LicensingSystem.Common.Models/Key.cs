@@ -1,9 +1,8 @@
-﻿using Senticode.WPF.Tools.MVVM;
-using System;
+﻿using System;
 
 namespace Senticode.LicensingSystem.Common.Models
 {
-    public class Key : ModelBase
+    public class Key
     {
         public string Value { get; set; }
         public Product Product { get; set; } //f, m:1

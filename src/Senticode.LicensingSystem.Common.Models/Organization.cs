@@ -1,8 +1,6 @@
-﻿using Senticode.WPF.Tools.MVVM;
-
-namespace Senticode.LicensingSystem.Common.Models
+﻿namespace Senticode.LicensingSystem.Common.Models
 {
-    public class Organization : ModelBase
+    public class Organization
     {
         public string Name { get; set; }
     }

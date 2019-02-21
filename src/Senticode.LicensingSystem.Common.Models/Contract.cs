@@ -1,8 +1,6 @@
-﻿using Senticode.WPF.Tools.MVVM;
-
-namespace Senticode.LicensingSystem.Common.Models
+﻿namespace Senticode.LicensingSystem.Common.Models
 {
-    public class Contract : ModelBase
+    public class Contract
     {
         public string Name { get; set; }
         public int KeyLimit { get; set; }

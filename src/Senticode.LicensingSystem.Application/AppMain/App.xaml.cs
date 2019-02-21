@@ -21,7 +21,7 @@ namespace Senticode.LicensingSystem.Application.AppMain
             LocalizeStringEx.Initialize();
         }
 
-        public void Initialize(IUnityContainer container)
+        public IInitializer Initialize(IUnityContainer container)
         {
             //Maintetance
             container.RegisterInstance<ResourceManager>(
@@ -43,6 +43,8 @@ namespace Senticode.LicensingSystem.Application.AppMain
 
             //Others
             new AssemblyAgregator().Initialize(container);
+
+            return this;
         }
     }
 }

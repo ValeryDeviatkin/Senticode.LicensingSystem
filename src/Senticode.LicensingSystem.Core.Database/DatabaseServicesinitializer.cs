@@ -5,9 +5,10 @@ namespace Senticode.LicensingSystem.Core.Database
 {
     public class DatabaseServicesinitializer : IInitializer
     {
-        public void Initialize(IUnityContainer container)
+        public IInitializer Initialize(IUnityContainer container)
         {
             //todo
+            return this;
         }
     }
 }

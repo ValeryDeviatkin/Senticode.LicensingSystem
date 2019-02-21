@@ -1,8 +1,6 @@
-﻿using Senticode.WPF.Tools.MVVM;
-
-namespace Senticode.LicensingSystem.Common.Models
+﻿namespace Senticode.LicensingSystem.Common.Models
 {
-    public class Product : ModelBase
+    public class Product
     {
         public string Name { get; set; }
     }
