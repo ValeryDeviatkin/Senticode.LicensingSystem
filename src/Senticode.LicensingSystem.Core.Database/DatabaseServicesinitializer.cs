@@ -21,21 +21,21 @@ namespace Senticode.LicensingSystem.Core.Database
             container.RegisterType<IEntityContext<Product>, EntityContext<Product>>();
             container.RegisterType<IEntityContext<User>, EntityContext<User>>();
 
-            container.RegisterSingleton<ICrud<Position>, CrudService<Position, IIdentifier>>(
+            container.RegisterSingleton<ICrud<Position>, CrudService<Position>>(
                 new InjectionConstructor(container));
-            container.RegisterSingleton<ICrud<Contract>, CrudService<Contract, IIdentifier>>(
+            container.RegisterSingleton<ICrud<Contract>, CrudService<Contract>>(
                 new InjectionConstructor(container));
-            container.RegisterSingleton<ICrud<Device>, CrudService<Device, IIdentifier>>(
+            container.RegisterSingleton<ICrud<Device>, CrudService<Device>>(
                 new InjectionConstructor(container));
-            container.RegisterSingleton<ICrud<Key>, CrudService<Key, IIdentifier>>(
+            container.RegisterSingleton<ICrud<Key>, CrudService<Key>>(
                 new InjectionConstructor(container));
-            container.RegisterSingleton<ICrud<KeyUser>, CrudService<KeyUser, IKeyUserIdentifier>>(
+            container.RegisterSingleton<ICrud<KeyUser>, CrudService<KeyUser>>(
                 new InjectionConstructor(container));
-            container.RegisterSingleton<ICrud<Organization>, CrudService<Organization, IIdentifier>>(
+            container.RegisterSingleton<ICrud<Organization>, CrudService<Organization>>(
                 new InjectionConstructor(container));
-            container.RegisterSingleton<ICrud<Product>, CrudService<Product, IIdentifier>>(
+            container.RegisterSingleton<ICrud<Product>, CrudService<Product>>(
                 new InjectionConstructor(container));
-            container.RegisterSingleton<ICrud<User>, CrudService<User, IId>>(
+            container.RegisterSingleton<ICrud<User>, CrudService<User>>(
                 new InjectionConstructor(container));
 
             return this;

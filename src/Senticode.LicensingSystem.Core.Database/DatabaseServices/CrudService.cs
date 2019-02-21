@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Linq;
@@ -10,9 +11,13 @@ using Unity;
 
 namespace Senticode.LicensingSystem.Core.Database.DatabaseServices
 {
-    internal class CrudService<TEntity, TIdentifier> : ICrud<TEntity> where TEntity : class
+    internal class CrudService<TEntity> : ICrud<TEntity> where TEntity : class
     {
-        private readonly PropertyInfo[] _identifierProperties = typeof(TIdentifier).GetPublicProperties();
+        private readonly PropertyInfo[] _keyProperties =
+            typeof(TEntity).GetPublicProperties()
+            .Where(x => x.GetCustomAttributes<KeyAttribute>().Any())
+            .ToArray();
+
         private readonly IUnityContainer _container;
 
         public CrudService(IUnityContainer container)
@@ -145,7 +150,7 @@ namespace Senticode.LicensingSystem.Core.Database.DatabaseServices
         {
             var keyValues = new List<object>();
 
-            foreach (var property in _identifierProperties)
+            foreach (var property in _keyProperties)
             {
                 keyValues.Add(property.GetValue(entity));
             }

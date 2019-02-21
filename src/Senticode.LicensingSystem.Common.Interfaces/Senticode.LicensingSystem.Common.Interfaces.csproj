@@ -52,7 +52,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\IId.cs" />
-    <Compile Include="Models\IIdentifier.cs" />
     <Compile Include="Models\IKeyUserIdentifier.cs" />
     <Compile Include="ResourceKeys.cs" />
     <Compile Include="Services\ICrud.cs" />
