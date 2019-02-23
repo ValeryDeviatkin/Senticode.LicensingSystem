@@ -1,5 +1,4 @@
-﻿using Senticode.LicensingSystem.Common.Interfaces.Models;
-using Senticode.LicensingSystem.Common.Interfaces.Services;
+﻿using Senticode.LicensingSystem.Common.Interfaces.Services;
 using Senticode.LicensingSystem.Core.Database.DatabaseServices;
 using Senticode.WPF.Tools.Core.Interfaces;
 using Senticode.LicensingSystem.Common.Models;
@@ -10,7 +9,7 @@ namespace Senticode.LicensingSystem.Core.Database
 {
     public class DatabaseServicesinitializer : IInitializer
     {
-        public IInitializer Initialize(IUnityContainer container)
+        public void Initialize(IUnityContainer container)
         {
             container.RegisterType<IEntityContext<Position>, EntityContext<Position>>();
             container.RegisterType<IEntityContext<Contract>, EntityContext<Contract>>();
@@ -37,8 +36,6 @@ namespace Senticode.LicensingSystem.Core.Database
                 new InjectionConstructor(container));
             container.RegisterSingleton<ICrud<User>, CrudService<User>>(
                 new InjectionConstructor(container));
-
-            return this;
         }
     }
 }

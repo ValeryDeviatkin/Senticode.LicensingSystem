@@ -1,10 +1,11 @@
 ﻿using System.Windows;
+using Senticode.LicensingSystem.Common.Models;
 
 namespace Senticode.LicensingSystem.Application.Views.EditWindows
 {
-    public partial class EditEntityWithOnlyNameWindow : Window
+    public partial class EditProductWindow : EditEntityWindowBase<Product>
     {
-        public EditEntityWithOnlyNameWindow()
+        public EditProductWindow()
         {
             InitializeComponent();
         }

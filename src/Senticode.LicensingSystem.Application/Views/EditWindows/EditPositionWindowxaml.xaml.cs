@@ -3,9 +3,9 @@ using Senticode.LicensingSystem.Common.Models;
 
 namespace Senticode.LicensingSystem.Application.Views.EditWindows
 {
-    public partial class EditContractWindow : EditEntityWindowBase<Contract>
+    public partial class EditPositionWindowxaml : EditEntityWindowBase<Position>
     {
-        public EditContractWindow()
+        public EditPositionWindowxaml()
         {
             InitializeComponent();
         }

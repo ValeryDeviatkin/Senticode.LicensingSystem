@@ -1,6 +1,6 @@
 ﻿namespace Senticode.WPF.Tools.Core
 {
-    public class AppCommandsBase
+    public abstract class AppCommandsBase
     {
         //public AppCommandsBase(IUnityContainer container)
         //{

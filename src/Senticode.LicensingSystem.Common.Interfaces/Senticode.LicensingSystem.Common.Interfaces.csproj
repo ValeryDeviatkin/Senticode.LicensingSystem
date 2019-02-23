@@ -51,16 +51,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\Param.cs" />
     <Compile Include="Models\IId.cs" />
-    <Compile Include="Models\IKeyUserIdentifier.cs" />
     <Compile Include="ResourceKeys.cs" />
     <Compile Include="Services\ICrud.cs" />
     <Compile Include="Services\IEntityContext.cs" />
     <Compile Include="Services\ILocalize.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Enums\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Tools\Core\DugTools.WPF.Tools.Core.csproj">
       <Project>{5177D22F-56FE-4B8E-A50A-4A8BB1A8CA78}</Project>

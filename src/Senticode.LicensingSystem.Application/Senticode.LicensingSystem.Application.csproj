@@ -87,20 +87,38 @@
     </ApplicationDefinition>
     <Compile Include="Commands\AppCommands.AddCommand.cs" />
     <Compile Include="Services\DialogProvider.cs" />
+    <Compile Include="Services\ViewModelsProvider.cs" />
+    <Compile Include="ViewModels\Entities\ContractViewModel.cs" />
+    <Compile Include="ViewModels\Entities\DeviceViewModel.cs" />
+    <Compile Include="ViewModels\Entities\EntityViewModeBase.cs" />
+    <Compile Include="ViewModels\Entities\KeyUserViewModel.cs" />
+    <Compile Include="ViewModels\Entities\KeyViewModel.cs" />
+    <Compile Include="ViewModels\Entities\OrganizationViewModel.cs" />
+    <Compile Include="ViewModels\Entities\PositionViewModel.cs" />
+    <Compile Include="ViewModels\Entities\ProductViewModel.cs" />
+    <Compile Include="ViewModels\Entities\UserViewModel.cs" />
+    <Compile Include="ViewModels\MenuItemViewModel.cs" />
     <Compile Include="Views\EditWindows\EditContractWindow.xaml.cs">
       <DependentUpon>EditContractWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\EditWindows\EditDeviceWindow.xaml.cs">
       <DependentUpon>EditDeviceWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\EditWindows\EditEntityWindowBase.cs" />
     <Compile Include="Views\EditWindows\EditKeyUserWindow.xaml.cs">
       <DependentUpon>EditKeyUserWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\EditWindows\EditKeyWindow.xaml.cs">
       <DependentUpon>EditKeyWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\EditWindows\EditEntityWithOnlyNameWindow.xaml.cs">
-      <DependentUpon>EditEntityWithOnlyNameWindow.xaml</DependentUpon>
+    <Compile Include="Views\EditWindows\EditOrganizationWindow.xaml.cs">
+      <DependentUpon>EditOrganizationWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditWindows\EditPositionWindowxaml.xaml.cs">
+      <DependentUpon>EditPositionWindowxaml.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditWindows\EditProductWindow.xaml.cs">
+      <DependentUpon>EditProductWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\EditWindows\EditUserWindow.xaml.cs">
       <DependentUpon>EditUserWindow.xaml</DependentUpon>
@@ -127,7 +145,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\EditWindows\EditEntityWithOnlyNameWindow.xaml">
+    <Page Include="Views\EditWindows\EditOrganizationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EditWindows\EditPositionWindowxaml.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EditWindows\EditProductWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

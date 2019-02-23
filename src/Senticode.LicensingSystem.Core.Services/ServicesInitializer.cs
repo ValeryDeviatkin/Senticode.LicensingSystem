@@ -8,10 +8,9 @@ namespace Senticode.LicensingSystem.Core.Services
 {
     public class ServicesInitializer : IInitializer
     {
-        public IInitializer Initialize(IUnityContainer container)
+        public void Initialize(IUnityContainer container)
         {
             container.RegisterSingleton<ILocalize, LocalizeService>(new InjectionConstructor(container));
-            return this;
         }
     }
 }

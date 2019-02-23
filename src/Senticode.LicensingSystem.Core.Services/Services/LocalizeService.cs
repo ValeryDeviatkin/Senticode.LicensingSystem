@@ -11,7 +11,7 @@ namespace Senticode.LicensingSystem.Core.Services.Services
         public LocalizeService(IUnityContainer container)
         {
             container.RegisterInstance(this);
-            CultureContext = AvailableImplementation[0];
+            CultureContext = AvailableImplementation[1];
         }
 
         #region CultureContext property

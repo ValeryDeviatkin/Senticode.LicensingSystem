@@ -6,8 +6,6 @@ namespace Senticode.LicensingSystem.Application.AppMain
 {
     public class AppSettings : AppSettingsBase
     {
-        public static readonly string CONTAINER_PARAM = "container";
-
         private readonly IUnityContainer _container;
         private ILocalize _localizeService;
 

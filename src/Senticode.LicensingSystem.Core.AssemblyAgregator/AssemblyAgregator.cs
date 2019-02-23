@@ -7,11 +7,10 @@ namespace Senticode.LicensingSystem.Core.AssemblyAgregator
 {
     public class AssemblyAgregator : IInitializer
     {
-        public IInitializer Initialize(IUnityContainer container)
+        public void Initialize(IUnityContainer container)
         {
             new DatabaseServicesinitializer().Initialize(container);
             new ServicesInitializer().Initialize(container);
-            return this;
         }
     }
 }

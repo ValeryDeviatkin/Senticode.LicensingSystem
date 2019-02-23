@@ -1,34 +1,31 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Senticode.LicensingSystem.Common.Interfaces.Models;
 using Senticode.WPF.Tools.MVVM;
 
 namespace Senticode.LicensingSystem.Common.Models
 {
-    public class KeyUser : ModelBase, IKeyUserIdentifier
+    public class KeyUser : ModelBase
     {
-        [Key]
-        public int KeyUserId { get; set; }
-        //Key
-
-        #region Name property
+        #region KeyUserName property
 
         /// <summary>
-        /// Gets or sets the Name value.
+        /// Gets or sets the KeyUserName value.
         /// </summary>
-        public string Name
+        [Key]
+        public string KeyUserName
         {
-            get { return _name; }
-            set { SetProperty(ref _name, value); }
+            get { return _keyUserName; }
+            set { SetProperty(ref _keyUserName, value); }
         }
 
         /// <summary>
-        /// Name property data.
+        /// KeyUserName property data.
         /// </summary>
-        private string _name;
+        private string _keyUserName;
 
         #endregion
+        //Key
 
         #region PositionName property
 

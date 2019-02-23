@@ -1,9 +1,18 @@
-﻿using Senticode.WPF.Tools.Core;
+﻿using System;
+using System.Reflection;
+using Senticode.LicensingSystem.Application.Extensions;
+using Senticode.LicensingSystem.Application.ViewModels.Entities;
+using Senticode.LicensingSystem.Common.Interfaces;
+using Senticode.WPF.Tools.Core;
+using Senticode.WPF.Tools.MVVM;
 
 namespace Senticode.LicensingSystem.Application.Commands
 {
     internal partial class AppCommands
     {
+        private readonly MethodInfo _addMethod = typeof(AppCommands)
+            .GetMethod(nameof(ExecuteAddGeneric), BindingFlags.NonPublic | BindingFlags.Instance);
+
         #region Add command
 
         /// <summary>
@@ -19,7 +28,11 @@ namespace Senticode.LicensingSystem.Application.Commands
         /// </summary>
         private void ExecuteAdd(object parameter)
         {
-            //todo
+            var type = parameter as Type;
+            if (type == null) return;
+
+            var executeAdd = _addMethod.MakeGenericMethod(type);
+            executeAdd.Invoke(this, null);
         }
 
         /// <summary>
@@ -32,5 +45,20 @@ namespace Senticode.LicensingSystem.Application.Commands
         }
 
         #endregion
+        
+        private void ExecuteAddGeneric<TEntity>()
+            where TEntity : ModelBase, new()
+        {
+            EntityViewModelBase<TEntity> viewModel;
+
+            var dialog = _dialogProvider.CreateDialog(
+                ResourceKeys.Add.L() + " " + typeof(TEntity).Name.L(),
+                out viewModel);
+
+            if (dialog.ShowDialog() ?? false)
+            {
+                
+            }
+        }
     }
 }

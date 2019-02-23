@@ -1,8 +1,9 @@
 ﻿using System.Windows;
+using Senticode.LicensingSystem.Common.Models;
 
 namespace Senticode.LicensingSystem.Application.Views.EditWindows
 {
-    public partial class EditKeyUserWindow : Window
+    public partial class EditKeyUserWindow : EditEntityWindowBase<KeyUser>
     {
         public EditKeyUserWindow()
         {

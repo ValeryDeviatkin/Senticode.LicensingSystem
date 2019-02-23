@@ -1,11 +1,13 @@
-﻿<Window x:Class="Senticode.LicensingSystem.Application.Views.EditWindows.EditKeyUserWindow"
+﻿<w:EditEntityWindowBase x:TypeArguments="m:KeyUser"
+                                  x:Class="Senticode.LicensingSystem.Application.Views.EditWindows.EditKeyUserWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:e="clr-namespace:Senticode.LicensingSystem.Application.Extensions"
         xmlns:i="clr-namespace:Senticode.LicensingSystem.Common.Interfaces;assembly=Senticode.LicensingSystem.Common.Interfaces"
-        xmlns:c="clr-namespace:Senticode.LicensingSystem.Application.Converters"
+        xmlns:w="clr-namespace:Senticode.LicensingSystem.Application.Views.EditWindows"
+        xmlns:m="clr-namespace:Senticode.LicensingSystem.Common.Models;assembly=Senticode.LicensingSystem.Common.Models"
         mc:Ignorable="d">
 
     <Grid>
@@ -27,13 +29,12 @@
             <Button IsDefault="True" Click="Ok_OnClick"
                     Content="{e:Localize {x:Static i:ResourceKeys.Ok}}">
                 <Button.IsEnabled>
-                    <MultiBinding Converter="{c:MultiBindingBoolConverter}">
-                        <Binding Path="(Validation.HasError)" ElementName="NameBox"/>
-                    </MultiBinding>
+                    <Binding Path="(Validation.HasError)" ElementName="SerialBox"/>
                 </Button.IsEnabled>
             </Button>
             <Button IsCancel="True"
                     Content="{e:Localize {x:Static i:ResourceKeys.Cancel}}"/>
         </UniformGrid>
     </Grid>
-</Window>
+</w:EditEntityWindowBase>
+

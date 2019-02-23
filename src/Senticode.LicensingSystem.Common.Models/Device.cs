@@ -27,26 +27,26 @@ namespace Senticode.LicensingSystem.Common.Models
         #endregion
         //Key
 
-        #region KeyUserId property
+        #region KeyUserName property
 
         /// <summary>
-        /// Gets or sets the KeyUserId value.
+        /// Gets or sets the KeyUserName value.
         /// </summary>
         [ForeignKey(nameof(KeyUser))]
-        public int KeyUserId
+        public string KeyUserName
         {
-            get { return _keyUserId; }
-            set { SetProperty(ref _keyUserId, value); }
+            get { return _keyUserName; }
+            set { SetProperty(ref _keyUserName, value); }
         }
 
         /// <summary>
-        /// KeyUserId property data.
+        /// KeyUserName property data.
         /// </summary>
-        private int _keyUserId;
+        private string _keyUserName;
 
         #endregion
         //f
-
+        
 
         #region KeyUser property
 
