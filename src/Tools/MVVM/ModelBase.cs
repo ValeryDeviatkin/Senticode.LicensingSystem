@@ -9,11 +9,14 @@ namespace Senticode.WPF.Tools.MVVM
 {
     public abstract class ModelBase: ObesrvableObject
     {
+        private const string INDEXER_PROPERTY_NAME = "Item"; //todo crutch
+
         protected Dictionary<string, PropertyInfo> ModelProperties { get; }
 
         protected ModelBase()
         {
             ModelProperties = GetType().GetPublicProperties()
+                .Where(x => !x.Name.Equals(INDEXER_PROPERTY_NAME))
                 .ToDictionary(x => x.Name, x => x);
         }
 

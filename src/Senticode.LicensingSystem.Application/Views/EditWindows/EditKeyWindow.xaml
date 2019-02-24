@@ -36,10 +36,14 @@
             <DatePicker Text="{Binding EndDate}" />
         </GroupBox>
         <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.Device}}">
-            <ComboBox SelectedItem="{Binding DeviceSerial}" />
+            <ComboBox SelectedIndex="0"
+                      SelectedItem="{Binding DeviceSerial}"
+                      ItemsSource="{Binding MainViewModel.DeviceSerials}" />
         </GroupBox>
         <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.Product}}">
-            <ComboBox SelectedItem="{Binding ProductName}" />
+            <ComboBox SelectedIndex="0"
+                      SelectedItem="{Binding ProductName}"
+                      ItemsSource="{Binding MainViewModel.ProductNames}" />
         </GroupBox>
         <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.ExtensionReason}}">
             <TextBox Name="ExtensionBox"

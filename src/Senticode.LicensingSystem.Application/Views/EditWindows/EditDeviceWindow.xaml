@@ -27,7 +27,9 @@
             </TextBox>
         </GroupBox>
         <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.KeyUser}}">
-            <ComboBox SelectedItem="{Binding KeyUserName}" />
+            <ComboBox SelectedIndex="0"
+                SelectedItem="{Binding KeyUserName}"
+                      ItemsSource="{Binding MainViewModel.KeyUserNames}"/>
         </GroupBox>
         <Button IsDefault="True" Click="Ok_OnClick"
                 Content="{e:Localize {x:Static i:ResourceKeys.Ok}}">
