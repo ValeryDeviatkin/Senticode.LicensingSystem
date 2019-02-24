@@ -12,16 +12,16 @@
 
     <UniformGrid Columns="2">
         <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.Serial}}">
-            <TextBox Name="SerialBox"/>
+            <TextBox Name="SerialBox" Text="{Binding DeviceSerial}"/>
         </GroupBox>
         <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.KeyUser}}">
-            <ComboBox/>
+            <ComboBox SelectedItem="{Binding KeyUserName}"/>
         </GroupBox>
         <Button IsDefault="True" Click="Ok_OnClick"
                 Content="{e:Localize {x:Static i:ResourceKeys.Ok}}">
-            <Button.IsEnabled>
+            <!--<Button.IsEnabled>
                 <Binding Path="(Validation.HasError)" ElementName="SerialBox"/>
-            </Button.IsEnabled>
+            </Button.IsEnabled>-->
         </Button>
         <Button IsCancel="True"
                 Content="{e:Localize {x:Static i:ResourceKeys.Cancel}}"/>

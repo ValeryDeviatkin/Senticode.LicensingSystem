@@ -13,36 +13,36 @@
 
     <UniformGrid Columns="2">
         <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.KeyValue}}">
-            <TextBox Name="KeyValueBox"/>
+            <TextBox Name="KeyValueBox" Text="{Binding Value}"/>
         </GroupBox>
         <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.IssueDate}}">
-            <DatePicker/>
+            <DatePicker Text="{Binding IssueDate}"/>
         </GroupBox>
         <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.StartDate}}">
-            <DatePicker/>
+            <DatePicker Text="{Binding StartDate}"/>
         </GroupBox>
         <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.EndDate}}">
-            <DatePicker/>
+            <DatePicker Text="{Binding EndDate}"/>
         </GroupBox>
         <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.Device}}">
-            <ComboBox/>
+            <ComboBox SelectedItem="{Binding DeviceSerial}"/>
         </GroupBox>
         <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.Product}}">
-            <ComboBox/>
+            <ComboBox SelectedItem="{Binding ProductName}"/>
         </GroupBox>
         <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.ExtensionReason}}">
-            <TextBox/>
+            <TextBox Text="{Binding ExtensionReason}"/>
         </GroupBox>
         <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.IsTestKey}}">
-            <CheckBox/>
+            <CheckBox IsChecked="{Binding IsTestKey}"/>
         </GroupBox>
         <Button IsDefault="True" Click="Ok_OnClick"
                 Content="{e:Localize {x:Static i:ResourceKeys.Ok}}">
-            <Button.IsEnabled>
+            <!--<Button.IsEnabled>
                 <MultiBinding Converter="{c:MultiBindingBoolConverter}">
                     <Binding Path="(Validation.HasError)" ElementName="KeyValueBox"/>
                 </MultiBinding>
-            </Button.IsEnabled>
+            </Button.IsEnabled>-->
         </Button>
         <Button IsCancel="True"
                 Content="{e:Localize {x:Static i:ResourceKeys.Cancel}}"/>

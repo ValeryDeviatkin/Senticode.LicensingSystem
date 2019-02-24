@@ -29,13 +29,13 @@ namespace Senticode.WPF.Tools.MVVM.Abstractions
             };
         }
 
-        protected T GetFromModel<TModel, T>(Func<TModel, T> func)
+        public T GetFromModel<TModel, T>(Func<TModel, T> func)
             where TModel : ModelBase
         {
             return func((TModel) _models.Value[typeof(TModel).Name]);
         }
 
-        protected T GetFromModel<TModel, T>([CallerMemberName] string propertyName = "")
+        public T GetFromModel<TModel, T>([CallerMemberName] string propertyName = "")
             where TModel : ModelBase
         {
             var model = _models.Value[typeof(TModel).Name];

@@ -17,32 +17,32 @@
         </Grid.RowDefinitions>
         
         <GroupBox Grid.Row="0" Header="{e:Localize {x:Static i:ResourceKeys.Login}}">
-            <TextBox Name="LoginBox"/>
+            <TextBox Name="LoginBox" Text="{Binding Login}"/>
         </GroupBox>
         <UniformGrid Columns="2" Grid.Row="1">
             <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.IsReadingAvailable}}">
-                <CheckBox/>
+                <CheckBox IsChecked="{Binding IsReadingAvailable}"/>
             </GroupBox>
             <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.IsWritingAvailable}}">
-                <CheckBox/>
+                <CheckBox IsChecked="{Binding IsWritingAvailable}"/>
             </GroupBox>
             <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.IsReadingKeysAvailable}}">
-                <CheckBox/>
+                <CheckBox IsChecked="{Binding IsReadingKeysAvailable}"/>
             </GroupBox>
             <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.HasAccessToWorkingKeys}}">
-                <CheckBox/>
+                <CheckBox IsChecked="{Binding HasAccessToWorkingKeys}"/>
             </GroupBox>
             <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.HasAccessToTestKeys}}">
-                <CheckBox/>
+                <CheckBox IsChecked="{Binding HasAccessToTestKeys}"/>
             </GroupBox>
             <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.IsAdmin}}">
-                <CheckBox/>
+                <CheckBox IsChecked="{Binding IsAdmin}"/>
             </GroupBox>
             <Button IsDefault="True" Click="Ok_OnClick"
                     Content="{e:Localize {x:Static i:ResourceKeys.Ok}}">
-                <Button.IsEnabled>
+                <!--<Button.IsEnabled>
                     <Binding Path="(Validation.HasError)" ElementName="LoginBox"/>
-                </Button.IsEnabled>
+                </Button.IsEnabled>-->
             </Button>
             <Button IsCancel="True"
                     Content="{e:Localize {x:Static i:ResourceKeys.Cancel}}"/>

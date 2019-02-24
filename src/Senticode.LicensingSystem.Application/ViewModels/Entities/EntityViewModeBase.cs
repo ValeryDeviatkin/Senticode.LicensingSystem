@@ -29,5 +29,20 @@ namespace Senticode.LicensingSystem.Application.ViewModels.Entities
             Entity = entity;
             SetModel(entity);
         }
+
+        public void UpdateModel()
+        {
+            foreach (var modelProperty in ModelProperties)
+            {
+                try
+                {
+                    var value = modelProperty.Value.GetValue(this);
+                    typeof(TEntity).GetProperty(modelProperty.Key)?.SetValue(Entity, value);
+                }
+                catch (PropertyNotFoundException)
+                {
+                }
+            }
+        }
     }
 }

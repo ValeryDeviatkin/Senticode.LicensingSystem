@@ -9,11 +9,11 @@ namespace Senticode.WPF.Tools.MVVM
 {
     public abstract class ModelBase: ObesrvableObject
     {
-        private readonly Dictionary<string, PropertyInfo> _properties;
+        protected Dictionary<string, PropertyInfo> ModelProperties { get; }
 
         protected ModelBase()
         {
-            _properties = GetType().GetPublicProperties()
+            ModelProperties = GetType().GetPublicProperties()
                 .ToDictionary(x => x.Name, x => x);
         }
 
@@ -21,17 +21,16 @@ namespace Senticode.WPF.Tools.MVVM
         {
             PropertyInfo propertyInfo;
 
-            if (_properties.TryGetValue(property, out propertyInfo))
+            if (ModelProperties.TryGetValue(property, out propertyInfo))
             {
                 return propertyInfo.GetValue(this);
             }
 
-            throw new PropertyNotFoundException(
-                $"{GetType().FullName} not contains property of {property}.");
+            throw new PropertyNotFoundException($"{GetType().FullName} not contains property of {property}.");
         }
     }
 
-    internal class PropertyNotFoundException : Exception
+    public class PropertyNotFoundException : Exception
     {
         public PropertyNotFoundException(string message) : base(message)
         {

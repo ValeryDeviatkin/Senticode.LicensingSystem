@@ -3,8 +3,10 @@ using System.Reflection;
 using Senticode.LicensingSystem.Application.Extensions;
 using Senticode.LicensingSystem.Application.ViewModels.Entities;
 using Senticode.LicensingSystem.Common.Interfaces;
+using Senticode.LicensingSystem.Common.Interfaces.Services;
 using Senticode.WPF.Tools.Core;
 using Senticode.WPF.Tools.MVVM;
+using Unity;
 
 namespace Senticode.LicensingSystem.Application.Commands
 {
@@ -57,7 +59,9 @@ namespace Senticode.LicensingSystem.Application.Commands
 
             if (dialog.ShowDialog() ?? false)
             {
-                
+                viewModel.UpdateModel();
+                var crud = _container.Resolve<ICrud<TEntity>>();
+                crud.Add(viewModel.Entity);
             }
         }
     }

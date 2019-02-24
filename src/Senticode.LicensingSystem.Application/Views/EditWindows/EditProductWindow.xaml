@@ -21,13 +21,13 @@
         </Grid.ColumnDefinitions>
 
         <GroupBox Grid.Row="0" Grid.ColumnSpan="2" Header="{e:Localize {x:Static i:ResourceKeys.Name}}">
-            <TextBox Name="NameBox"/>
+            <TextBox Name="NameBox" Text="{Binding ProductName}"/>
         </GroupBox>
         <Button IsDefault="True" Click="Ok_OnClick" Grid.Row="1" Grid.Column="0"
                 Content="{e:Localize {x:Static i:ResourceKeys.Ok}}">
-            <Button.IsEnabled>
+            <!--<Button.IsEnabled>
                 <Binding Path="(Validation.HasError)" ElementName="NameBox"/>
-            </Button.IsEnabled>
+            </Button.IsEnabled>-->
         </Button>
         <Button IsCancel="True" Grid.Row="1" Grid.Column="1"
                 Content="{e:Localize {x:Static i:ResourceKeys.Cancel}}"/>
