@@ -1,6 +1,4 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using Senticode.LicensingSystem.Common.Models;
 using Unity;
 
@@ -154,6 +152,28 @@ namespace Senticode.LicensingSystem.Application.ViewModels.Entities
 
         public KeyViewModel(IUnityContainer container, Key entity) : base(container, entity)
         {
+        }
+
+        public override string this[string columnName]
+        {
+            get
+            {
+                switch (columnName)
+                {
+                    case nameof(Value):
+                    {
+                        if (string.IsNullOrWhiteSpace(Value)) return "NULL";
+                        break;
+                    }
+                    case nameof(ExtensionReason):
+                    {
+                        if (string.IsNullOrWhiteSpace(ExtensionReason)) return "NULL";
+                        break;
+                    }
+                }
+
+                return null;
+            }
         }
     }
 }

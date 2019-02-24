@@ -1,40 +1,53 @@
 ﻿<w:EditEntityWindowBase x:TypeArguments="m:KeyUser"
-                                  x:Class="Senticode.LicensingSystem.Application.Views.EditWindows.EditKeyUserWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:e="clr-namespace:Senticode.LicensingSystem.Application.Extensions"
-        xmlns:i="clr-namespace:Senticode.LicensingSystem.Common.Interfaces;assembly=Senticode.LicensingSystem.Common.Interfaces"
-        xmlns:w="clr-namespace:Senticode.LicensingSystem.Application.Views.EditWindows"
-        xmlns:m="clr-namespace:Senticode.LicensingSystem.Common.Models;assembly=Senticode.LicensingSystem.Common.Models"
-        mc:Ignorable="d">
+                        x:Class="Senticode.LicensingSystem.Application.Views.EditWindows.EditKeyUserWindow"
+                        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                        xmlns:e="clr-namespace:Senticode.LicensingSystem.Application.Extensions"
+                        xmlns:i="clr-namespace:Senticode.LicensingSystem.Common.Interfaces;assembly=Senticode.LicensingSystem.Common.Interfaces"
+                        xmlns:w="clr-namespace:Senticode.LicensingSystem.Application.Views.EditWindows"
+                        xmlns:m="clr-namespace:Senticode.LicensingSystem.Common.Models;assembly=Senticode.LicensingSystem.Common.Models"
+                        xmlns:c="clr-namespace:Senticode.LicensingSystem.Application.Converters"
+                        mc:Ignorable="d">
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
 
         <GroupBox Grid.Row="0" Header="{e:Localize {x:Static i:ResourceKeys.Name}}">
-            <TextBox Name="NameBox" Text="{Binding KeyUserName}"/>
+            <TextBox Name="NameBox"
+                     Validation.ErrorTemplate="{StaticResource ValidationFailed}">
+                <TextBox.Text>
+                    <Binding Path="KeyUserName"
+                             NotifyOnValidationError="True"
+                             UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <DataErrorValidationRule />
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
         </GroupBox>
         <UniformGrid Grid.Row="1">
             <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.Organization}}">
-                <ComboBox SelectedItem="{Binding OrganizationName}"/>
+                <ComboBox SelectedItem="{Binding OrganizationName}" />
             </GroupBox>
             <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.Position}}">
-                <ComboBox SelectedItem="{Binding PositionName}"/>
+                <ComboBox SelectedItem="{Binding PositionName}" />
             </GroupBox>
             <Button IsDefault="True" Click="Ok_OnClick"
                     Content="{e:Localize {x:Static i:ResourceKeys.Ok}}">
-                <!--<Button.IsEnabled>
-                    <Binding Path="(Validation.HasError)" ElementName="SerialBox"/>
-                </Button.IsEnabled>-->
+                <Button.IsEnabled>
+                    <MultiBinding Converter="{c:MultiBindingBoolConverter}">
+                        <Binding Path="(Validation.HasError)" ElementName="NameBox" />
+                    </MultiBinding>
+                </Button.IsEnabled>
             </Button>
             <Button IsCancel="True"
-                    Content="{e:Localize {x:Static i:ResourceKeys.Cancel}}"/>
+                    Content="{e:Localize {x:Static i:ResourceKeys.Cancel}}" />
         </UniformGrid>
     </Grid>
 </w:EditEntityWindowBase>
-

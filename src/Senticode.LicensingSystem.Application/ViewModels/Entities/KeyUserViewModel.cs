@@ -62,5 +62,22 @@ namespace Senticode.LicensingSystem.Application.ViewModels.Entities
         public KeyUserViewModel(IUnityContainer container, KeyUser entity) : base(container, entity)
         {
         }
+
+        public override string this[string columnName]
+        {
+            get
+            {
+                switch (columnName)
+                {
+                    case nameof(KeyUserName):
+                    {
+                        if (string.IsNullOrWhiteSpace(KeyUserName)) return "NULL";
+                        break;
+                    }
+                }
+
+                return null;
+            }
+        }
     }
 }

@@ -26,5 +26,22 @@ namespace Senticode.LicensingSystem.Application.ViewModels.Entities
         public ProductViewModel(IUnityContainer container, Product entity) : base(container, entity)
         {
         }
+
+        public override string this[string columnName]
+        {
+            get
+            {
+                switch (columnName)
+                {
+                    case nameof(ProductName):
+                    {
+                        if (string.IsNullOrWhiteSpace(ProductName)) return "NULL";
+                        break;
+                    }
+                }
+
+                return null;
+            }
+        }
     }
 }

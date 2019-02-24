@@ -26,5 +26,22 @@ namespace Senticode.LicensingSystem.Application.ViewModels.Entities
         public PositionViewModel(IUnityContainer container, Position entity) : base(container, entity)
         {
         }
+
+        public override string this[string columnName]
+        {
+            get
+            {
+                switch (columnName)
+                {
+                    case nameof(PositionName):
+                    {
+                        if (string.IsNullOrWhiteSpace(PositionName)) return "NULL";
+                        break;
+                    }
+                }
+
+                return null;
+            }
+        }
     }
 }

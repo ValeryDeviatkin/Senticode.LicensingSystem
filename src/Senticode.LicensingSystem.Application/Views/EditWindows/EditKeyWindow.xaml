@@ -1,51 +1,73 @@
 ﻿<w:EditEntityWindowBase x:TypeArguments="m:Key"
-                                  x:Class="Senticode.LicensingSystem.Application.Views.EditWindows.EditKeyWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:e="clr-namespace:Senticode.LicensingSystem.Application.Extensions"
-        xmlns:i="clr-namespace:Senticode.LicensingSystem.Common.Interfaces;assembly=Senticode.LicensingSystem.Common.Interfaces"
-        xmlns:c="clr-namespace:Senticode.LicensingSystem.Application.Converters"
-        xmlns:w="clr-namespace:Senticode.LicensingSystem.Application.Views.EditWindows"
-        xmlns:m="clr-namespace:Senticode.LicensingSystem.Common.Models;assembly=Senticode.LicensingSystem.Common.Models"
-        mc:Ignorable="d">
+                        x:Class="Senticode.LicensingSystem.Application.Views.EditWindows.EditKeyWindow"
+                        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                        xmlns:e="clr-namespace:Senticode.LicensingSystem.Application.Extensions"
+                        xmlns:i="clr-namespace:Senticode.LicensingSystem.Common.Interfaces;assembly=Senticode.LicensingSystem.Common.Interfaces"
+                        xmlns:c="clr-namespace:Senticode.LicensingSystem.Application.Converters"
+                        xmlns:w="clr-namespace:Senticode.LicensingSystem.Application.Views.EditWindows"
+                        xmlns:m="clr-namespace:Senticode.LicensingSystem.Common.Models;assembly=Senticode.LicensingSystem.Common.Models"
+                        mc:Ignorable="d">
 
     <UniformGrid Columns="2">
         <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.KeyValue}}">
-            <TextBox Name="KeyValueBox" Text="{Binding Value}"/>
+            <TextBox Name="KeyValueBox"
+                     Validation.ErrorTemplate="{StaticResource ValidationFailed}">
+                <TextBox.Text>
+                    <Binding Path="Value"
+                             NotifyOnValidationError="True"
+                             UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <DataErrorValidationRule />
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
         </GroupBox>
         <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.IssueDate}}">
-            <DatePicker Text="{Binding IssueDate}"/>
+            <DatePicker Text="{Binding IssueDate}" />
         </GroupBox>
         <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.StartDate}}">
-            <DatePicker Text="{Binding StartDate}"/>
+            <DatePicker Text="{Binding StartDate}" />
         </GroupBox>
         <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.EndDate}}">
-            <DatePicker Text="{Binding EndDate}"/>
+            <DatePicker Text="{Binding EndDate}" />
         </GroupBox>
         <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.Device}}">
-            <ComboBox SelectedItem="{Binding DeviceSerial}"/>
+            <ComboBox SelectedItem="{Binding DeviceSerial}" />
         </GroupBox>
         <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.Product}}">
-            <ComboBox SelectedItem="{Binding ProductName}"/>
+            <ComboBox SelectedItem="{Binding ProductName}" />
         </GroupBox>
         <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.ExtensionReason}}">
-            <TextBox Text="{Binding ExtensionReason}"/>
+            <TextBox Name="ExtensionBox"
+                     Validation.ErrorTemplate="{StaticResource ValidationFailed}">
+                <TextBox.Text>
+                    <Binding Path="ExtensionReason"
+                             NotifyOnValidationError="True"
+                             UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <DataErrorValidationRule />
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
         </GroupBox>
         <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.IsTestKey}}">
-            <CheckBox IsChecked="{Binding IsTestKey}"/>
+            <CheckBox IsChecked="{Binding IsTestKey}" />
         </GroupBox>
         <Button IsDefault="True" Click="Ok_OnClick"
                 Content="{e:Localize {x:Static i:ResourceKeys.Ok}}">
-            <!--<Button.IsEnabled>
+            <Button.IsEnabled>
                 <MultiBinding Converter="{c:MultiBindingBoolConverter}">
-                    <Binding Path="(Validation.HasError)" ElementName="KeyValueBox"/>
+                    <Binding Path="(Validation.HasError)" ElementName="KeyValueBox" />
+                    <Binding Path="(Validation.HasError)" ElementName="ExtensionBox" />
                 </MultiBinding>
-            </Button.IsEnabled>-->
+            </Button.IsEnabled>
         </Button>
         <Button IsCancel="True"
-                Content="{e:Localize {x:Static i:ResourceKeys.Cancel}}"/>
+                Content="{e:Localize {x:Static i:ResourceKeys.Cancel}}" />
     </UniformGrid>
 </w:EditEntityWindowBase>
-

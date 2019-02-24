@@ -26,5 +26,22 @@ namespace Senticode.LicensingSystem.Application.ViewModels.Entities
         public OrganizationViewModel(IUnityContainer container, Organization entity) : base(container, entity)
         {
         }
+
+        public override string this[string columnName]
+        {
+            get
+            {
+                switch (columnName)
+                {
+                    case nameof(OrganizationName):
+                    {
+                        if (string.IsNullOrWhiteSpace(OrganizationName)) return "NULL";
+                        break;
+                    }
+                }
+
+                return null;
+            }
+        }
     }
 }

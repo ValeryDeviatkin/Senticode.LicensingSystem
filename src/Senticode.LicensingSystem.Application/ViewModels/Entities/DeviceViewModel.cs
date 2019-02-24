@@ -44,5 +44,22 @@ namespace Senticode.LicensingSystem.Application.ViewModels.Entities
         public DeviceViewModel(IUnityContainer container, Device entity) : base(container, entity)
         {
         }
+
+        public override string this[string columnName]
+        {
+            get
+            {
+                switch (columnName)
+                {
+                    case nameof(DeviceSerial):
+                    {
+                        if (string.IsNullOrWhiteSpace(DeviceSerial)) return "NULL";
+                        break;
+                    }
+                }
+
+                return null;
+            }
+        }
     }
 }

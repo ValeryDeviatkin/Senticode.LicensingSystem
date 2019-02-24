@@ -63,5 +63,27 @@ namespace Senticode.LicensingSystem.Application.ViewModels.Entities
         public ContractViewModel(IUnityContainer container, Contract entity) : base(container, entity)
         {
         }
+
+        public override string this[string columnName]
+        {
+            get
+            {
+                switch (columnName)
+                {
+                    case nameof(KeyLimit):
+                    {
+                        if (KeyLimit < 0 || KeyLimit > 1000) return "[0; 1000]";
+                        break;
+                    }
+                    case nameof(ContractName):
+                    {
+                        if (string.IsNullOrWhiteSpace(ContractName)) return "NULL";
+                        break;
+                    }
+                }
+
+                return null;
+            }
+        }
     }
 }

@@ -134,5 +134,22 @@ namespace Senticode.LicensingSystem.Application.ViewModels.Entities
         public UserViewModel(IUnityContainer container, User entity) : base(container, entity)
         {
         }
+
+        public override string this[string columnName]
+        {
+            get
+            {
+                switch (columnName)
+                {
+                    case nameof(Login):
+                    {
+                        if (string.IsNullOrWhiteSpace(Login)) return "NULL";
+                        break;
+                    }
+                }
+
+                return null;
+            }
+        }
     }
 }

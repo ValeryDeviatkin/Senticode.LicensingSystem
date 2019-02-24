@@ -1,9 +1,10 @@
-﻿using Senticode.WPF.Tools.MVVM;
+﻿using System.ComponentModel;
+using Senticode.WPF.Tools.MVVM;
 using Unity;
 
 namespace Senticode.LicensingSystem.Application.ViewModels.Entities
 {
-    internal abstract class EntityViewModelBase<TEntity> : ViewModelBase
+    internal abstract class EntityViewModelBase<TEntity> : ViewModelBase, IDataErrorInfo
         where TEntity : ModelBase, new()
     {
         #region Entity property
@@ -44,5 +45,8 @@ namespace Senticode.LicensingSystem.Application.ViewModels.Entities
                 }
             }
         }
+
+        public abstract string this[string columnName] { get; }
+        public string Error { get; }
     }
 }
