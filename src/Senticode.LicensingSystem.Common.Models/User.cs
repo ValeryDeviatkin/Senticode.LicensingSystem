@@ -1,10 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Senticode.LicensingSystem.Common.Interfaces.Models;
 using Senticode.WPF.Tools.MVVM;
 
 namespace Senticode.LicensingSystem.Common.Models
 {
-    public class User : ModelBase, IId
+    public class User : ModelBase
     {
         [Key]
         public int Id { get; set; }

@@ -1,4 +1,6 @@
-﻿using Senticode.LicensingSystem.Application.Services;
+﻿using System;
+using Senticode.LicensingSystem.Application.Services;
+using Senticode.LicensingSystem.Application.ViewModels;
 using Senticode.WPF.Tools.Core;
 using Unity;
 
@@ -8,6 +10,7 @@ namespace Senticode.LicensingSystem.Application.Commands
     {
         private readonly IUnityContainer _container;
         private readonly DialogProvider _dialogProvider;
+        private readonly Lazy<MainViewModel> _mainViewModel;
 
         public AppCommands(
             IUnityContainer container,
@@ -16,6 +19,7 @@ namespace Senticode.LicensingSystem.Application.Commands
             container.RegisterInstance(this);
             _container = container;
             _dialogProvider = dialogProvider;
+            _mainViewModel = new Lazy<MainViewModel>(() => container.Resolve<MainViewModel>());
         }
     }
 }

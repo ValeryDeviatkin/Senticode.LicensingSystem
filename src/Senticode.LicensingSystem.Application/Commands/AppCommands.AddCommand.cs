@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection;
 using Senticode.LicensingSystem.Application.Extensions;
-using Senticode.LicensingSystem.Application.ViewModels.Entities;
+using Senticode.LicensingSystem.Application.ViewModels.Abstraction;
 using Senticode.LicensingSystem.Common.Interfaces;
 using Senticode.LicensingSystem.Common.Interfaces.Services;
 using Senticode.WPF.Tools.Core;

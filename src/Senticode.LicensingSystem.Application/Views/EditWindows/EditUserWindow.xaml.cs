@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using Senticode.LicensingSystem.Application.Views.EditWindows.Abstraction;
 using Senticode.LicensingSystem.Common.Models;
 
 namespace Senticode.LicensingSystem.Application.Views.EditWindows

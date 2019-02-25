@@ -177,8 +177,8 @@
   <data name="Product" xml:space="preserve">
     <value>Product</value>
   </data>
-  <data name="Serial" xml:space="preserve">
-    <value>Serial</value>
+  <data name="DeviceSerial" xml:space="preserve">
+    <value>Device Serial</value>
   </data>
   <data name="StartDate" xml:space="preserve">
     <value>Start Date</value>
@@ -186,7 +186,7 @@
   <data name="Title" xml:space="preserve">
     <value>Licensing System</value>
   </data>
-  <data name="FindKey" xml:space="preserve">
+  <data name="FindKeys" xml:space="preserve">
     <value>Search For Keys</value>
   </data>
   <data name="RemainingTerm" xml:space="preserve">
@@ -206,5 +206,32 @@
   </data>
   <data name="User" xml:space="preserve">
     <value>User</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Dec" xml:space="preserve">
+    <value>Dec</value>
+  </data>
+  <data name="ContractName" xml:space="preserve">
+    <value>Contract Name</value>
+  </data>
+  <data name="IsTestKey" xml:space="preserve">
+    <value>Is Test Key</value>
+  </data>
+  <data name="KeyUserName" xml:space="preserve">
+    <value>Key User Name</value>
+  </data>
+  <data name="OrganizationName" xml:space="preserve">
+    <value>Organization Name</value>
+  </data>
+  <data name="PositionName" xml:space="preserve">
+    <value>Position Name</value>
+  </data>
+  <data name="ProductName" xml:space="preserve">
+    <value>Product Name</value>
   </data>
 </root>

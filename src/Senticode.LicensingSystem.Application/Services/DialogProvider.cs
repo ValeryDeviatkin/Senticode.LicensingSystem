@@ -1,6 +1,6 @@
 ﻿using System.Windows;
-using Senticode.LicensingSystem.Application.ViewModels.Entities;
-using Senticode.LicensingSystem.Application.Views.EditWindows;
+using Senticode.LicensingSystem.Application.ViewModels.Abstraction;
+using Senticode.LicensingSystem.Application.Views.EditWindows.Abstraction;
 using Senticode.LicensingSystem.Common.Interfaces.Enums;
 using Senticode.WPF.Tools.MVVM;
 using Unity;
@@ -11,11 +11,15 @@ namespace Senticode.LicensingSystem.Application.Services
     internal class DialogProvider
     {
         private readonly IUnityContainer _container;
+        private readonly ViewModelsProvider _viewModelsProvider;
 
-        public DialogProvider(IUnityContainer container)
+        public DialogProvider(
+            IUnityContainer container,
+            ViewModelsProvider viewModelsProvider)
         {
             container.RegisterInstance(this);
             _container = container;
+            _viewModelsProvider = viewModelsProvider;
         }
 
         public Window CreateDialog<TEntity>(
@@ -27,11 +31,7 @@ namespace Senticode.LicensingSystem.Application.Services
         {
             var window = _container.Resolve<EditEntityWindowBase<TEntity>>();
             window.Title = title;
-
-            viewModel = _container.Resolve<EntityViewModelBase<TEntity>>(
-                new ParameterOverride(Param.container.ToString(), _container),
-                new ParameterOverride(Param.entity.ToString(), entity ?? new TEntity()));
-
+            viewModel = _viewModelsProvider.GetEntityViewModel(entity);
             window.DataContext = viewModel;
             return window;
         }

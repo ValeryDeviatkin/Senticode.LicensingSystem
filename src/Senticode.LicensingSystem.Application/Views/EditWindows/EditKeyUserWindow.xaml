@@ -1,4 +1,4 @@
-﻿<w:EditEntityWindowBase x:TypeArguments="m:KeyUser"
+﻿<a:EditEntityWindowBase x:TypeArguments="m:KeyUser"
                         x:Class="Senticode.LicensingSystem.Application.Views.EditWindows.EditKeyUserWindow"
                         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -6,9 +6,9 @@
                         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                         xmlns:e="clr-namespace:Senticode.LicensingSystem.Application.Extensions"
                         xmlns:i="clr-namespace:Senticode.LicensingSystem.Common.Interfaces;assembly=Senticode.LicensingSystem.Common.Interfaces"
-                        xmlns:w="clr-namespace:Senticode.LicensingSystem.Application.Views.EditWindows"
                         xmlns:m="clr-namespace:Senticode.LicensingSystem.Common.Models;assembly=Senticode.LicensingSystem.Common.Models"
                         xmlns:c="clr-namespace:Senticode.LicensingSystem.Application.Converters"
+                        xmlns:a="clr-namespace:Senticode.LicensingSystem.Application.Views.EditWindows.Abstraction"
                         mc:Ignorable="d">
 
     <Grid>
@@ -17,7 +17,7 @@
             <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
 
-        <GroupBox Grid.Row="0" Header="{e:Localize {x:Static i:ResourceKeys.Name}}">
+        <GroupBox Grid.Row="0" Header="{e:Localize {x:Static i:ResourceKeys.KeyUserName}}">
             <TextBox Name="NameBox"
                      Validation.ErrorTemplate="{StaticResource ValidationFailed}">
                 <TextBox.Text>
@@ -32,12 +32,12 @@
             </TextBox>
         </GroupBox>
         <UniformGrid Grid.Row="1">
-            <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.Organization}}">
+            <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.OrganizationName}}">
                 <ComboBox SelectedIndex="0"
                           SelectedItem="{Binding OrganizationName}"
                           ItemsSource="{Binding MainViewModel.OrganizationNames}" />
             </GroupBox>
-            <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.Position}}">
+            <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.PositionName}}">
                 <ComboBox SelectedIndex="0"
                           SelectedItem="{Binding PositionName}"
                           ItemsSource="{Binding MainViewModel.PositionNames}" />
@@ -54,4 +54,4 @@
                     Content="{e:Localize {x:Static i:ResourceKeys.Cancel}}" />
         </UniformGrid>
     </Grid>
-</w:EditEntityWindowBase>
+</a:EditEntityWindowBase>

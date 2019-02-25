@@ -1,4 +1,5 @@
-﻿using Senticode.LicensingSystem.Common.Models;
+﻿using Senticode.LicensingSystem.Application.ViewModels.Abstraction;
+using Senticode.LicensingSystem.Common.Models;
 using Unity;
 
 namespace Senticode.LicensingSystem.Application.ViewModels.Entities

@@ -1,4 +1,4 @@
-﻿<w:EditEntityWindowBase x:TypeArguments="m:Contract"
+﻿<a:EditEntityWindowBase x:TypeArguments="m:Contract"
                         x:Class="Senticode.LicensingSystem.Application.Views.EditWindows.EditContractWindow"
                         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -7,8 +7,8 @@
                         xmlns:e="clr-namespace:Senticode.LicensingSystem.Application.Extensions"
                         xmlns:i="clr-namespace:Senticode.LicensingSystem.Common.Interfaces;assembly=Senticode.LicensingSystem.Common.Interfaces"
                         xmlns:c="clr-namespace:Senticode.LicensingSystem.Application.Converters"
-                        xmlns:w="clr-namespace:Senticode.LicensingSystem.Application.Views.EditWindows"
                         xmlns:m="clr-namespace:Senticode.LicensingSystem.Common.Models;assembly=Senticode.LicensingSystem.Common.Models"
+                        xmlns:a="clr-namespace:Senticode.LicensingSystem.Application.Views.EditWindows.Abstraction"
                         mc:Ignorable="d">
 
     <Grid>
@@ -17,7 +17,7 @@
             <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
 
-        <GroupBox Grid.Row="0" Header="{e:Localize {x:Static i:ResourceKeys.Name}}">
+        <GroupBox Grid.Row="0" Header="{e:Localize {x:Static i:ResourceKeys.ContractName}}">
             <TextBox Name="NameBox"
                      Validation.ErrorTemplate="{StaticResource ValidationFailed}">
                 <TextBox.Text>
@@ -32,7 +32,7 @@
             </TextBox>
         </GroupBox>
         <UniformGrid Columns="2" Grid.Row="1">
-            <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.Organization}}">
+            <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.OrganizationName}}">
                 <ComboBox SelectedIndex="0"
                           SelectedItem="{Binding OrganizationName}"
                           ItemsSource="{Binding MainViewModel.OrganizationNames}" />
@@ -64,4 +64,4 @@
                     Content="{e:Localize {x:Static i:ResourceKeys.Cancel}}" />
         </UniformGrid>
     </Grid>
-</w:EditEntityWindowBase>
+</a:EditEntityWindowBase>

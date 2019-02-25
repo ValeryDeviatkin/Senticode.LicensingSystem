@@ -1,4 +1,5 @@
 ﻿using System;
+using Senticode.LicensingSystem.Application.ViewModels.Abstraction;
 using Senticode.LicensingSystem.Common.Models;
 using Unity;
 
@@ -6,21 +7,21 @@ namespace Senticode.LicensingSystem.Application.ViewModels.Entities
 {
     internal class KeyViewModel : EntityViewModelBase<Key>
     {
-        #region Value property
+        #region KeyValue property
 
         /// <summary>
-        /// Gets or sets the Value value.
+        /// Gets or sets the KeyValue value.
         /// </summary>
-        public string Value
+        public string KeyValue
         {
-            get { return _value; }
-            set { SetProperty(ref _value, value); }
+            get { return _keyValue; }
+            set { SetProperty(ref _keyValue, value); }
         }
 
         /// <summary>
-        /// Value property data.
+        /// KeyValue property data.
         /// </summary>
-        private string _value;
+        private string _keyValue;
 
         #endregion
 
@@ -160,9 +161,9 @@ namespace Senticode.LicensingSystem.Application.ViewModels.Entities
             {
                 switch (columnName)
                 {
-                    case nameof(Value):
+                    case nameof(KeyValue):
                     {
-                        if (string.IsNullOrWhiteSpace(Value)) return "NULL";
+                        if (string.IsNullOrWhiteSpace(KeyValue)) return "NULL";
                         break;
                     }
                     case nameof(ExtensionReason):

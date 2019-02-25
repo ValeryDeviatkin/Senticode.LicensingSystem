@@ -7,22 +7,22 @@ namespace Senticode.LicensingSystem.Common.Models
 {
     public class Key : ModelBase
     {
-        #region Value property
+        #region KeyValue property
 
         /// <summary>
-        /// Gets or sets the Value value.
+        /// Gets or sets the KeyValue value.
         /// </summary>
         [Key]
-        public string Value
+        public string KeyValue
         {
-            get { return _value; }
-            set { SetProperty(ref _value, value); }
+            get { return _keyValue; }
+            set { SetProperty(ref _keyValue, value); }
         }
 
         /// <summary>
-        /// Value property data.
+        /// KeyValue property data.
         /// </summary>
-        private string _value;
+        private string _keyValue;
 
         #endregion
         //Key

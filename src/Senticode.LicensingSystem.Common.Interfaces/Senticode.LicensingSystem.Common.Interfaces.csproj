@@ -52,7 +52,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enums\Param.cs" />
-    <Compile Include="Models\IId.cs" />
     <Compile Include="ResourceKeys.cs" />
     <Compile Include="Services\ICrud.cs" />
     <Compile Include="Services\IEntityContext.cs" />

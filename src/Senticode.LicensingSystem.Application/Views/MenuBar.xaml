@@ -13,8 +13,8 @@
                       Header="{e:Localize {x:Static i:ResourceKeys.Database}}">
                 <MenuItem.ItemContainerStyle>
                     <Style BasedOn="{StaticResource {x:Type MenuItem}}"  TargetType="MenuItem">
-                        <Setter Property="Command" Value="{Binding AppCommands}" />
-                        <Setter Property="CommandParameter" Value="{Binding }" />
+                        <Setter Property="Command" Value="{Binding AppCommands.DatabaseCommand}" />
+                        <Setter Property="CommandParameter" Value="{Binding Type}" />
                         <Setter Property="Header" Value="{Binding Title}" />
                     </Style>
                 </MenuItem.ItemContainerStyle>

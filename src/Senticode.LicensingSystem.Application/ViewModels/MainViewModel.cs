@@ -47,6 +47,24 @@ namespace Senticode.LicensingSystem.Application.ViewModels
 
         #endregion
 
+        #region EntityListViewModel property
+
+        /// <summary>
+        /// Gets or sets the EntityListViewModel value.
+        /// </summary>
+        public ViewModelBase<AppCommandsBase> EntityListViewModel
+        {
+            get { return _entityListViewModel; }
+            set { SetProperty(ref _entityListViewModel, value); }
+        }
+
+        /// <summary>
+        /// EntityListViewModel property data.
+        /// </summary>
+        private ViewModelBase<AppCommandsBase> _entityListViewModel;
+
+        #endregion
+
         public string[] PositionNames
         {
             get

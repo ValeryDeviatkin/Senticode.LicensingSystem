@@ -1,0 +1,132 @@
+﻿<UserControl x:Class="Senticode.LicensingSystem.Application.Views.EntityView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:b="clr-namespace:Senticode.LicensingSystem.Application.Behaviors"
+             xmlns:if="clr-namespace:Senticode.LicensingSystem.Common.Interfaces;assembly=Senticode.LicensingSystem.Common.Interfaces"
+             xmlns:e="clr-namespace:Senticode.LicensingSystem.Application.Extensions"
+             mc:Ignorable="d"
+             DataContext="{Binding EntityListViewModel}">
+
+    <UserControl.Resources>
+        <DataTemplate x:Key="FilterTemplate">
+            <Label Content="{e:Localize Binding={Binding}}" />
+        </DataTemplate>
+    </UserControl.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <UniformGrid Rows="1" Grid.Row="0">
+            <CheckBox IsChecked="{Binding IsDescending}"
+                      Content="{e:Localize {x:Static if:ResourceKeys.Dec}}" />
+            <ComboBox ItemTemplate="{StaticResource FilterTemplate}"
+                      SelectedItem="{Binding Filter, Mode=TwoWay}"
+                      ItemsSource="{Binding PropertyNames}" />
+            <TextBox Text="{Binding SearchString, UpdateSourceTrigger=PropertyChanged}" />
+        </UniformGrid>
+        
+        <ListView
+            Grid.Row="1"
+            VirtualizingStackPanel.IsVirtualizing="True"
+            VirtualizingStackPanel.VirtualizationMode="Recycling"
+            VirtualizingStackPanel.CacheLength="1"
+            VirtualizingStackPanel.CacheLengthUnit="Page"
+            VirtualizingStackPanel.ScrollUnit="Pixel"
+            ScrollViewer.IsDeferredScrollingEnabled="True"
+            SelectionMode="Extended"
+            AlternationCount="2"
+            IsSynchronizedWithCurrentItem="True"
+            Margin="4 0 4 4"
+            HorizontalContentAlignment="Stretch"
+            ItemsSource="{Binding CollectionView}">
+
+            <ListView.InputBindings>
+                <KeyBinding Key="Delete" Command="{Binding AppCommands.DeleteCommand}" />
+            </ListView.InputBindings>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="{e:Localize {x:Static if:ResourceKeys.Edit}}"
+                                        Command="{Binding AppCommands.EditCommand}"
+                                        CommandParameter="{Binding Entity}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="{e:Localize {x:Static if:ResourceKeys.Delete}}"
+                                        Command="{Binding AppCommands.DeleteCommand}"
+                                        CommandParameter="{Binding Entity}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="{x:Type ListViewItem}">
+                    <Setter Property="IsSelected" Value="{Binding IsSelected}" />
+                    <Setter Property="Margin" Value="1 1 1 1" />
+                    <Setter Property="Visibility" Value="{Binding Visibility}" />
+                    <Setter Property="Background" Value="AliceBlue" />
+                    <Setter Property="HorizontalContentAlignment" Value="Center" />
+                    <Setter Property="FontSize" Value="15" />
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListViewItem">
+                                <Border BorderBrush="{TemplateBinding BorderBrush}"
+                                        Background="{TemplateBinding Background}"
+                                        BorderThickness="2">
+                                    <GridViewRowPresenter
+                                        Columns="{TemplateBinding GridView.ColumnCollection}">
+                                    </GridViewRowPresenter>
+                                    <Border.InputBindings>
+                                        <MouseBinding MouseAction="LeftDoubleClick"
+                                                      Command="{Binding AppCommands.EditCommand}"
+                                                      CommandParameter="{Binding Entity}" />
+                                    </Border.InputBindings>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="ListView.AlternationIndex" Value="1">
+                                        <Setter Property="Background" Value="LightSteelBlue" />
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="BorderBrush" Value="LightSteelBlue" />
+                                        <Setter Property="Background" Value="LightCyan" />
+                                        <Setter Property="BorderBrush" Value="LightSteelBlue" />
+                                    </Trigger>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter Property="BorderBrush" Value="DarkBlue" />
+                                        <Setter Property="Background" Value="Cyan" />
+                                        <Setter Property="BorderBrush" Value="Blue" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="ContextMenu">
+                        <Setter.Value>
+                            <ContextMenu>
+                                <MenuItem Command="{Binding AppCommands.EditCommand}"
+                                          CommandParameter="{Binding Entity}"
+                                          Header="{e:Localize {x:Static if:ResourceKeys.Edit}}" />
+                                <MenuItem Command="{Binding AppCommands.DeleteCommand}"
+                                          Header="{e:Localize {x:Static if:ResourceKeys.Delete}}" />
+                            </ContextMenu>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ListView.ItemContainerStyle>
+            <i:Interaction.Behaviors>
+                <b:ListViewColumnResizeBehavior />
+            </i:Interaction.Behaviors>
+        </ListView></Grid>
+</UserControl>

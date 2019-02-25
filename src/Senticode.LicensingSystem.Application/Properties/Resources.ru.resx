@@ -180,8 +180,8 @@
   <data name="Product" xml:space="preserve">
     <value>Продукт</value>
   </data>
-  <data name="Serial" xml:space="preserve">
-    <value>Серийный Номер</value>
+  <data name="DeviceSerial" xml:space="preserve">
+    <value>Серийный Номер Устройства</value>
   </data>
   <data name="StartDate" xml:space="preserve">
     <value>Дата Окончания</value>
@@ -209,5 +209,29 @@
   </data>
   <data name="User" xml:space="preserve">
     <value>Пользователь</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Изменить</value>
+  </data>
+  <data name="Dec" xml:space="preserve">
+    <value>Обратная Сортировка</value>
+  </data>
+  <data name="ContractName" xml:space="preserve">
+    <value>Название Контракта</value>
+  </data>
+  <data name="KeyUserName" xml:space="preserve">
+    <value>Имя Пользователя Ключа</value>
+  </data>
+  <data name="OrganizationName" xml:space="preserve">
+    <value>Название Компании</value>
+  </data>
+  <data name="PositionName" xml:space="preserve">
+    <value>Название Должности</value>
+  </data>
+  <data name="ProductName" xml:space="preserve">
+    <value>Название Продукта</value>
   </data>
 </root>
