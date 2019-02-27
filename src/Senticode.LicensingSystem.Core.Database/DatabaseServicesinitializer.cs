@@ -9,7 +9,7 @@ namespace Senticode.LicensingSystem.Core.Database
 {
     public class DatabaseServicesinitializer : IInitializer
     {
-        public void Initialize(IUnityContainer container)
+        public IInitializer Initialize(IUnityContainer container)
         {
             container.RegisterType<IEntityContext<Position>, EntityContext<Position>>();
             container.RegisterType<IEntityContext<Contract>, EntityContext<Contract>>();
@@ -36,6 +36,8 @@ namespace Senticode.LicensingSystem.Core.Database
                 new InjectionConstructor(container));
             container.RegisterSingleton<ICrud<User>, CrudService<User>>(
                 new InjectionConstructor(container));
+
+            return this;
         }
     }
 }

@@ -36,7 +36,7 @@
                     <ControlTemplate>
                         <ComboBox ItemsSource="{Binding AppSettings.LocalizeService.AvailableImplementation}"
                                   SelectedItem="{Binding AppSettings.LocalizeService.CultureContext}"
-                                  Margin="0" Padding="0" BorderThickness="0" />
+                                  Margin="0"  BorderThickness="0" />
                     </ControlTemplate>
                 </MenuItem.Template>
             </MenuItem>

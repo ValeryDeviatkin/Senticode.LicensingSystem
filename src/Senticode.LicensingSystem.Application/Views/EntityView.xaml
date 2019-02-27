@@ -7,6 +7,7 @@
              xmlns:b="clr-namespace:Senticode.LicensingSystem.Application.Behaviors"
              xmlns:if="clr-namespace:Senticode.LicensingSystem.Common.Interfaces;assembly=Senticode.LicensingSystem.Common.Interfaces"
              xmlns:e="clr-namespace:Senticode.LicensingSystem.Application.Extensions"
+             xmlns:c="clr-namespace:Senticode.LicensingSystem.Application.Converters"
              mc:Ignorable="d"
              DataContext="{Binding EntityListViewModel}">
 
@@ -24,7 +25,8 @@
         
         <UniformGrid Rows="1" Grid.Row="0">
             <CheckBox IsChecked="{Binding IsDescending}"
-                      Content="{e:Localize {x:Static if:ResourceKeys.Dec}}" />
+                      Content="{e:Localize {x:Static if:ResourceKeys.Dec}}"
+                      HorizontalAlignment="Center"/>
             <ComboBox ItemTemplate="{StaticResource FilterTemplate}"
                       SelectedItem="{Binding Filter, Mode=TwoWay}"
                       ItemsSource="{Binding PropertyNames}" />
@@ -47,7 +49,8 @@
             ItemsSource="{Binding CollectionView}">
 
             <ListView.InputBindings>
-                <KeyBinding Key="Delete" Command="{Binding AppCommands.DeleteCommand}" />
+                <KeyBinding Key="Delete" Command="{Binding AppCommands.DeleteCommand}"
+                            CommandParameter="{Binding Type}"/>
             </ListView.InputBindings>
             <ListView.View>
                 <GridView>
@@ -55,17 +58,30 @@
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <Button Content="{e:Localize {x:Static if:ResourceKeys.Edit}}"
-                                        Command="{Binding AppCommands.EditCommand}"
-                                        CommandParameter="{Binding Entity}" />
+                                        Command="{Binding AppCommands.EditCommand}">
+                                    <Button.CommandParameter>
+                                        <MultiBinding Converter="{c:MultiBindingConverter}">
+                                            <Binding Path="Type"/>
+                                            <Binding Path="Entity"/>
+                                        </MultiBinding>
+                                    </Button.CommandParameter>
+                                </Button>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
+                    
                     <GridViewColumn>
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <Button Content="{e:Localize {x:Static if:ResourceKeys.Delete}}"
-                                        Command="{Binding AppCommands.DeleteCommand}"
-                                        CommandParameter="{Binding Entity}" />
+                                        Command="{Binding AppCommands.DeleteCommand}">
+                                    <Button.CommandParameter>
+                                        <MultiBinding Converter="{c:MultiBindingConverter}">
+                                            <Binding Path="Type"/>
+                                            <Binding Path="Entity"/>
+                                        </MultiBinding>
+                                    </Button.CommandParameter>
+                                </Button>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
@@ -90,8 +106,14 @@
                                     </GridViewRowPresenter>
                                     <Border.InputBindings>
                                         <MouseBinding MouseAction="LeftDoubleClick"
-                                                      Command="{Binding AppCommands.EditCommand}"
-                                                      CommandParameter="{Binding Entity}" />
+                                                      Command="{Binding AppCommands.EditCommand}">
+                                            <MouseBinding.CommandParameter>
+                                                <MultiBinding Converter="{c:MultiBindingConverter}">
+                                                    <Binding Path="Type"/>
+                                                    <Binding Path="Entity"/>
+                                                </MultiBinding>
+                                            </MouseBinding.CommandParameter>
+                                        </MouseBinding>
                                     </Border.InputBindings>
                                 </Border>
                                 <ControlTemplate.Triggers>
@@ -116,9 +138,16 @@
                         <Setter.Value>
                             <ContextMenu>
                                 <MenuItem Command="{Binding AppCommands.EditCommand}"
-                                          CommandParameter="{Binding Entity}"
-                                          Header="{e:Localize {x:Static if:ResourceKeys.Edit}}" />
+                                          Header="{e:Localize {x:Static if:ResourceKeys.Edit}}">
+                                    <MenuItem.CommandParameter>
+                                        <MultiBinding Converter="{c:MultiBindingConverter}">
+                                            <Binding Path="Type"/>
+                                            <Binding Path="Entity"/>
+                                        </MultiBinding>
+                                    </MenuItem.CommandParameter>
+                                </MenuItem>
                                 <MenuItem Command="{Binding AppCommands.DeleteCommand}"
+                                          CommandParameter="{Binding Type}"
                                           Header="{e:Localize {x:Static if:ResourceKeys.Delete}}" />
                             </ContextMenu>
                         </Setter.Value>
@@ -126,7 +155,7 @@
                 </Style>
             </ListView.ItemContainerStyle>
             <i:Interaction.Behaviors>
-                <b:ListViewColumnResizeBehavior />
+                <b:ListViewColumnBehavior />
             </i:Interaction.Behaviors>
         </ListView></Grid>
 </UserControl>

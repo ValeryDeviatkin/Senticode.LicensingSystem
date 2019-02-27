@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
-using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Reflection;
 using Senticode.LicensingSystem.Common.Interfaces.Services;
@@ -11,7 +10,8 @@ using Unity;
 
 namespace Senticode.LicensingSystem.Core.Database.DatabaseServices
 {
-    internal class CrudService<TEntity> : ICrud<TEntity> where TEntity : class
+    internal class CrudService<TEntity> : ICrud<TEntity>
+        where TEntity : class
     {
         private readonly PropertyInfo[] _keyProperties =
             typeof(TEntity).GetPublicProperties()
@@ -121,21 +121,23 @@ namespace Senticode.LicensingSystem.Core.Database.DatabaseServices
             LocalEntities.RemoveRange(entities);
         }
 
-        public bool Update(TEntity entity)
+        public bool Update(TEntity entity, object[] oldKeyValues)
         {
             bool result;
 
             using (var context = _container.Resolve<IEntityContext<TEntity>>())
             {
                 var dbEntities = context.Entities;
+                var oldEntity = dbEntities.Find(oldKeyValues);
 
-                if (dbEntities.Find(GetKeyValues(entity)) == null)
+                if (oldEntity == null)
                 {
                     result = false;
                 }
                 else
                 {
-                    dbEntities.AddOrUpdate(entity);
+                    dbEntities.Remove(oldEntity);
+                    dbEntities.Add(entity);
                     context.SaveChanges();
                     LocalEntities.Remove(entity);
                     LocalEntities.Add(entity);
@@ -146,7 +148,7 @@ namespace Senticode.LicensingSystem.Core.Database.DatabaseServices
             return result;
         }
 
-        private object[] GetKeyValues(TEntity entity)
+        public object[] GetKeyValues(TEntity entity)
         {
             var keyValues = new List<object>();
 

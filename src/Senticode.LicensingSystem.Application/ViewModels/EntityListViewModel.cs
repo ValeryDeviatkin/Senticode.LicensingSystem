@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
 using System.Windows.Data;
@@ -9,9 +10,9 @@ using Senticode.WPF.Tools.Core;
 using Senticode.WPF.Tools.MVVM;
 using Unity;
 
-namespace Senticode.LicensingSystem.Application.ViewModels
+namespace Senticode.LicensingSystem.Application.ViewModels //todo unsubscribe events
 {
-    internal class EntityListViewModel<TEntity> : ViewModelBase<AppCommandsBase>, IPropertyNames
+    internal class EntityListViewModel<TEntity> : ViewModelBase<AppCommandsBase>, IPropertyNames, ITypeViewModel
         where TEntity : ModelBase, new()
     {
         private readonly ViewModelsProvider _provider;
@@ -190,5 +191,6 @@ namespace Senticode.LicensingSystem.Application.ViewModels
         #endregion
 
         public string[] PropertyNames { get; }
+        public Type Type { get; } = typeof(TEntity);
     }
 }

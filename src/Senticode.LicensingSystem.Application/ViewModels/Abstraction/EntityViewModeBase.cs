@@ -4,12 +4,13 @@ using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
 using System.Windows;
+using Senticode.WPF.Tools.Core;
 using Senticode.WPF.Tools.MVVM;
 using Unity;
 
 namespace Senticode.LicensingSystem.Application.ViewModels.Abstraction
 {
-    internal abstract class EntityViewModelBase<TEntity> : ViewModelBase,
+    internal abstract class EntityViewModelBase<TEntity> : ViewModelBase<AppCommandsBase>,
         IDataErrorInfo, ITypeViewModel, IPropertyNames
         where TEntity : ModelBase, new()
     {

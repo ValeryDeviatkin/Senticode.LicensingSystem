@@ -26,7 +26,7 @@ namespace Senticode.LicensingSystem.Application.AppMain
             LocalizeStringEx.Initialize();
         }
 
-        public void Initialize(IUnityContainer container)
+        public IInitializer Initialize(IUnityContainer container)
         {
             new AssemblyAgregator().Initialize(container);
 
@@ -125,6 +125,8 @@ namespace Senticode.LicensingSystem.Application.AppMain
             container.RegisterSingleton<EntityComparer<Contract>>(new InjectionConstructor(
                 container,
                 container.Resolve<EntityListViewModel<Contract>>()));
+
+            return this;
         }
     }
 }

@@ -90,6 +90,7 @@
     <Compile Include="Commands\AppCommands.DatabaseCommand.cs" />
     <Compile Include="Commands\AppCommands.DeleteCommand.cs" />
     <Compile Include="Commands\AppCommands.EditCommand.cs" />
+    <Compile Include="Converters\MultiBindingConverter.cs" />
     <Compile Include="Services\DialogProvider.cs" />
     <Compile Include="Services\EntityComparer.cs" />
     <Compile Include="Services\ViewModelsProvider.cs" />
@@ -189,7 +190,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="AppMain\AppSettings.cs" />
-    <Compile Include="Behaviors\ListViewColumnResizeBehavior.cs" />
+    <Compile Include="Behaviors\ListViewColumnBehavior.cs" />
     <Compile Include="Commands\AppCommands.cs" />
     <Compile Include="Converters\CountToBoolConverter.cs" />
     <Compile Include="Converters\ErrorListConverter.cs" />

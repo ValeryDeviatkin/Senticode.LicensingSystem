@@ -9,7 +9,8 @@ namespace Senticode.LicensingSystem.Common.Interfaces.Services
         void Add(IEnumerable<TEntity> entities);
         bool Delete(TEntity entity);
         void Delete(IEnumerable<TEntity> entities);
-        bool Update(TEntity entity);
+        bool Update(TEntity entity, object[] oldKeyValues);
         ObservableRangeCollection<TEntity> LocalEntities { get; }
+        object[] GetKeyValues(TEntity entity);
     }
 }
