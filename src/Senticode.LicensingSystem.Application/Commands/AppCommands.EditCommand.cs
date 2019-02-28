@@ -57,8 +57,6 @@ namespace Senticode.LicensingSystem.Application.Commands
         {
             var entity = param as TEntity;
             if (entity == null) return;
-            var crud = _container.Resolve<ICrud<TEntity>>();
-            var oldKeyValues = crud.GetKeyValues(entity);
             EntityViewModelBase<TEntity> viewModel;
 
             var dialog = _dialogProvider.CreateDialog(
@@ -68,6 +66,8 @@ namespace Senticode.LicensingSystem.Application.Commands
 
             if (dialog.ShowDialog() ?? false)
             {
+                var crud = _container.Resolve<ICrud<TEntity>>();
+                var oldKeyValues = crud.GetKeyValues(entity);
                 viewModel.UpdateModel();
                 crud.Update(entity, oldKeyValues);
             }

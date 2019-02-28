@@ -33,13 +33,11 @@
         </GroupBox>
         <UniformGrid Grid.Row="1">
             <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.OrganizationName}}">
-                <ComboBox SelectedIndex="0"
-                          SelectedItem="{Binding OrganizationName}"
+                <ComboBox SelectedItem="{Binding OrganizationName}"
                           ItemsSource="{Binding MainViewModel.OrganizationNames}" />
             </GroupBox>
             <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.PositionName}}">
-                <ComboBox SelectedIndex="0"
-                          SelectedItem="{Binding PositionName}"
+                <ComboBox SelectedItem="{Binding PositionName}"
                           ItemsSource="{Binding MainViewModel.PositionNames}" />
             </GroupBox>
             <Button IsDefault="True" Click="Ok_OnClick"

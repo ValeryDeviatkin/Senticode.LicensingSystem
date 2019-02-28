@@ -10,6 +10,7 @@ namespace Senticode.WPF.Tools.MVVM.Abstractions
 
         public virtual event PropertyChangedEventHandler PropertyChanged;
         public event PropertyChangingEventHandler PropertyChanging;
+
         public bool SetProperty<T>(
             ref T backingStore, T value,
             [CallerMemberName] string propertyName = "",
@@ -19,9 +20,11 @@ namespace Senticode.WPF.Tools.MVVM.Abstractions
             {
                 return false;
             }
+
             OnPropertyChanging(propertyName, onChanging);
             backingStore = value;
             OnPropertyChanged(propertyName, onChanged);
+
             return true;
         }
 

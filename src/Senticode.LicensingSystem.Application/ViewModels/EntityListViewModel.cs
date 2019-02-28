@@ -40,10 +40,20 @@ namespace Senticode.LicensingSystem.Application.ViewModels //todo unsubscribe ev
                 }
             }
 
-            CollectionView = (ListCollectionView)CollectionViewSource.GetDefaultView(EntityViewModels);
+            CollectionView = (ListCollectionView) CollectionViewSource.GetDefaultView(EntityViewModels);
             CollectionView.Filter = EntityFilter;
-            
         }
+
+        public ObservableRangeCollection<EntityViewModelBase<TEntity>> EntityViewModels { get; }
+        public ListCollectionView CollectionView { get; }
+        public TEntity[] SelectedItems
+        {
+            get { return EntityViewModels.Where(x => x.IsSelected).Select(x => x.Entity).ToArray(); }
+        }
+
+
+        public string[] PropertyNames { get; }
+        public Type Type { get; } = typeof(TEntity);
 
         public void Initialize()
         {
@@ -58,7 +68,7 @@ namespace Senticode.LicensingSystem.Application.ViewModels //todo unsubscribe ev
                 {
                     foreach (var newItem in e.NewItems)
                     {
-                        var viewModel = _provider.GetEntityViewModel((TEntity)newItem);
+                        var viewModel = _provider.GetEntityViewModel((TEntity) newItem);
                         EntityViewModels.Add(viewModel);
                     }
                 }
@@ -69,15 +79,10 @@ namespace Senticode.LicensingSystem.Application.ViewModels //todo unsubscribe ev
                     var viewModelsToDelete = new List<EntityViewModelBase<TEntity>>();
 
                     foreach (var oldItem in e.OldItems)
-                    {
                         viewModelsToDelete.Add(EntityViewModels.First(x => x.Entity.Equals(oldItem)));
-                    }
 
                     foreach (var entityViewModel in viewModelsToDelete)
-                    {
                         EntityViewModels.Remove(entityViewModel);
-                    }
-
                 }
                     break;
             }
@@ -85,7 +90,7 @@ namespace Senticode.LicensingSystem.Application.ViewModels //todo unsubscribe ev
 
         private bool EntityFilter(object obj)
         {
-            var entityViewModel = (EntityViewModelBase<TEntity>)obj;
+            var entityViewModel = (EntityViewModelBase<TEntity>) obj;
             if (string.IsNullOrWhiteSpace(SearchString)) return true;
 
             var searchString = SearchString.Trim().ToLower();
@@ -97,13 +102,6 @@ namespace Senticode.LicensingSystem.Application.ViewModels //todo unsubscribe ev
             return itemValue
                 .ToLower()
                 .Contains(searchString);
-        }
-
-        public ListCollectionView CollectionView { get; }
-
-        public TEntity[] SelectedItems
-        {
-            get { return EntityViewModels.Where(x => x.IsSelected).Select(x => x.Entity).ToArray(); }
         }
 
         #region IsDescending property
@@ -171,26 +169,5 @@ namespace Senticode.LicensingSystem.Application.ViewModels //todo unsubscribe ev
         private string _searchString;
 
         #endregion
-
-        #region EntityViewModels property
-
-        /// <summary>
-        ///     Gets or sets the EntityViewModels value.
-        /// </summary>
-        public ObservableRangeCollection<EntityViewModelBase<TEntity>> EntityViewModels
-        {
-            get { return _entityViewModels; }
-            set { SetProperty(ref _entityViewModels, value); }
-        }
-
-        /// <summary>
-        ///     EntityViewModels property data.
-        /// </summary>
-        private ObservableRangeCollection<EntityViewModelBase<TEntity>> _entityViewModels;
-
-        #endregion
-
-        public string[] PropertyNames { get; }
-        public Type Type { get; } = typeof(TEntity);
     }
 }

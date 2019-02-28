@@ -18,8 +18,8 @@ namespace Senticode.LicensingSystem.Application.ViewModels.Abstraction
 
         protected EntityViewModelBase(IUnityContainer container, TEntity entity) : base(container)
         {
-            Entity = entity;
             SetModel(entity);
+            Entity = entity;
 
             var list = new List<PropertyInfo>();
 

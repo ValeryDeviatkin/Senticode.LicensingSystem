@@ -18,7 +18,9 @@ namespace Senticode.WPF.Tools.MVVM.Abstractions
             {
                 ModelsHolder mh;
                 weekmh.TryGetTarget(out mh);
-                mh?.OnPropertyChanged(args.PropertyName);
+                //mh?.OnPropertyChanged(args.PropertyName);
+                var property = ModelProperties[args.PropertyName];
+                property.SetValue(this, model.ModelProperties[args.PropertyName].GetValue(model));
             };
 
             model.PropertyChanging += (sender, args) =>

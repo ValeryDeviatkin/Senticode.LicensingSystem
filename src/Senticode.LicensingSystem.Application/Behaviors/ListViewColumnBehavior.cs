@@ -34,7 +34,7 @@ namespace Senticode.LicensingSystem.Application.Behaviors
             _gridView.Columns.Clear();
             _columns.Clear();
 
-            foreach (var column in _startColumns)
+            foreach (var column in _startColumns.Except(new[] {_startColumns.Last()}))
             {
                 _gridView.Columns.Add(column);
             }
@@ -49,6 +49,8 @@ namespace Senticode.LicensingSystem.Application.Behaviors
 
                 _gridView.Columns.Add(_columns.Last());
             }
+
+            _gridView.Columns.Add(_startColumns.Last());
 
             ListViewOnSizeChanged(AssociatedObject, null);
             AssociatedObject.UpdateLayout();

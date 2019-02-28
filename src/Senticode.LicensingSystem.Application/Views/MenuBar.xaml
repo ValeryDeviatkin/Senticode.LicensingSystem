@@ -7,12 +7,12 @@
              xmlns:i="clr-namespace:Senticode.LicensingSystem.Common.Interfaces;assembly=Senticode.LicensingSystem.Common.Interfaces"
              mc:Ignorable="d">
 
-    <Grid>
+    <Grid Background="#F0F0F0">
         <Menu HorizontalAlignment="Left">
             <MenuItem ItemsSource="{Binding EntityMenuItems}"
                       Header="{e:Localize {x:Static i:ResourceKeys.Database}}">
                 <MenuItem.ItemContainerStyle>
-                    <Style BasedOn="{StaticResource {x:Type MenuItem}}"  TargetType="MenuItem">
+                    <Style BasedOn="{StaticResource {x:Type MenuItem}}" TargetType="MenuItem">
                         <Setter Property="Command" Value="{Binding AppCommands.DatabaseCommand}" />
                         <Setter Property="CommandParameter" Value="{Binding Type}" />
                         <Setter Property="Header" Value="{Binding Title}" />
@@ -22,7 +22,7 @@
             <MenuItem ItemsSource="{Binding EntityMenuItems}"
                       Header="{e:Localize {x:Static i:ResourceKeys.Add}}">
                 <MenuItem.ItemContainerStyle>
-                    <Style BasedOn="{StaticResource {x:Type MenuItem}}"  TargetType="MenuItem">
+                    <Style BasedOn="{StaticResource {x:Type MenuItem}}" TargetType="MenuItem">
                         <Setter Property="Command" Value="{Binding AppCommands.AddCommand}" />
                         <Setter Property="CommandParameter" Value="{Binding Type}" />
                         <Setter Property="Header" Value="{Binding Title}" />
@@ -36,7 +36,7 @@
                     <ControlTemplate>
                         <ComboBox ItemsSource="{Binding AppSettings.LocalizeService.AvailableImplementation}"
                                   SelectedItem="{Binding AppSettings.LocalizeService.CultureContext}"
-                                  Margin="0"  BorderThickness="0" />
+                                  Margin="0" />
                     </ControlTemplate>
                 </MenuItem.Template>
             </MenuItem>

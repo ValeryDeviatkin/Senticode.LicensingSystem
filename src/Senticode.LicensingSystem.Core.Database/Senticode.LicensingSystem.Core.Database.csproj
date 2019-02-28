@@ -84,6 +84,10 @@
       <Project>{5177D22F-56FE-4B8E-A50A-4A8BB1A8CA78}</Project>
       <Name>DugTools.WPF.Tools.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Tools\MVVM\DugTools.WPF.MVVM.csproj">
+      <Project>{D9374A95-C718-410F-8B4B-0C78E067ECBE}</Project>
+      <Name>DugTools.WPF.MVVM</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

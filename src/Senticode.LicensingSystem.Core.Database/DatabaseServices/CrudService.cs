@@ -11,7 +11,7 @@ using Unity;
 namespace Senticode.LicensingSystem.Core.Database.DatabaseServices
 {
     internal class CrudService<TEntity> : ICrud<TEntity>
-        where TEntity : class
+        where TEntity : class 
     {
         private readonly PropertyInfo[] _keyProperties =
             typeof(TEntity).GetPublicProperties()
@@ -27,7 +27,7 @@ namespace Senticode.LicensingSystem.Core.Database.DatabaseServices
 
             using (var context = container.Resolve<IEntityContext<TEntity>>())
             {
-                var dbEntities = context.Entities;
+                var dbEntities = context.Entities.ToArray();
                 
                 foreach (var contextEntity in dbEntities)
                 {
@@ -139,8 +139,6 @@ namespace Senticode.LicensingSystem.Core.Database.DatabaseServices
                     dbEntities.Remove(oldEntity);
                     dbEntities.Add(entity);
                     context.SaveChanges();
-                    LocalEntities.Remove(entity);
-                    LocalEntities.Add(entity);
                     result = true;
                 }
             }
