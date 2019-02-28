@@ -5,18 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:l="clr-namespace:Senticode.LicensingSystem.Application.Extensions"
         xmlns:i="clr-namespace:Senticode.LicensingSystem.Common.Interfaces;assembly=Senticode.LicensingSystem.Common.Interfaces"
-        xmlns:views="clr-namespace:Senticode.LicensingSystem.Application.Views"
+        xmlns:v="clr-namespace:Senticode.LicensingSystem.Application.Views"
         mc:Ignorable="d"
         WindowState="Maximized"
-        Background="DarkGray"
-        Title="{l:Localize {x:Static i:ResourceKeys.Title}}">
+        Title="{l:Localize {x:Static i:ResourceKeys.Title}}"
+        Icon="../Properties/icons/greenKey256.png">
+    
+    <Window.Background>
+        <ImageBrush ImageSource="../Properties/icons/pirates.jpg"/>
+    </Window.Background>
 
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <views:MenuBar Grid.Row="0"/>
-        <views:EntityView Grid.Row="1"/>
+        <v:MenuBar Grid.Row="0"/>
+        <v:EntityView Grid.Row="1">
+            <v:EntityView.Style>
+                <Style TargetType="UserControl">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding EntityViewModels.Count}" Value="0">
+                            <Setter Property="Visibility" Value="Collapsed" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding EntityViewModels}" Value="{x:Null}">
+                            <Setter Property="Visibility" Value="Collapsed" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </v:EntityView.Style>
+        </v:EntityView>
     </Grid>
 </Window>

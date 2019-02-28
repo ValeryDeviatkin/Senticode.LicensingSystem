@@ -208,7 +208,7 @@
     <value>Ключ</value>
   </data>
   <data name="User" xml:space="preserve">
-    <value>Пользователь</value>
+    <value>Подтверждение</value>
   </data>
   <data name="Delete" xml:space="preserve">
     <value>Удалить</value>
@@ -233,5 +233,17 @@
   </data>
   <data name="ProductName" xml:space="preserve">
     <value>Название Продукта</value>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="Export" xml:space="preserve">
+    <value>Экспорт</value>
+  </data>
+  <data name="Import" xml:space="preserve">
+    <value>Импорт</value>
+  </data>
+  <data name="Filter" xml:space="preserve">
+    <value>Фильтр</value>
   </data>
 </root>

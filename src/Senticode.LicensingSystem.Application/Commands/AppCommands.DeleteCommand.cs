@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Reflection;
+using System.Windows;
+using Senticode.LicensingSystem.Application.Extensions;
 using Senticode.LicensingSystem.Application.ViewModels;
+using Senticode.LicensingSystem.Common.Interfaces;
 using Senticode.LicensingSystem.Common.Interfaces.Services;
 using Senticode.WPF.Tools.Core;
 using Senticode.WPF.Tools.MVVM;
@@ -28,6 +31,13 @@ namespace Senticode.LicensingSystem.Application.Commands
         /// </summary>
         private void ExecuteDelete(object parameter)
         {
+            var confirm = MessageBox.Show(
+                ResourceKeys.Delete.L() + "?",
+                ResourceKeys.Confirm.L(),
+                MessageBoxButton.YesNo);
+
+            if (confirm != MessageBoxResult.Yes) return;
+
             var args = parameter as object[];
 
             if (args == null)

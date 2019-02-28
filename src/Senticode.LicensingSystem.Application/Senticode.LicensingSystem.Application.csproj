@@ -38,6 +38,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -90,6 +94,8 @@
     <Compile Include="Commands\AppCommands.DatabaseCommand.cs" />
     <Compile Include="Commands\AppCommands.DeleteCommand.cs" />
     <Compile Include="Commands\AppCommands.EditCommand.cs" />
+    <Compile Include="Commands\AppCommands.ExportCommand.cs" />
+    <Compile Include="Commands\AppCommands.ImportCommand.cs" />
     <Compile Include="Converters\MultiBindingConverter.cs" />
     <Compile Include="Services\DialogProvider.cs" />
     <Compile Include="Services\EntityComparer.cs" />
@@ -235,7 +241,6 @@
     </None>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Senticode.LicensingSystem.Common.Interfaces\Senticode.LicensingSystem.Common.Interfaces.csproj">
       <Project>{EE15AA29-0292-4F7A-A2D3-5CBB95228BB3}</Project>
@@ -257,6 +262,15 @@
       <Project>{D9374A95-C718-410F-8B4B-0C78E067ECBE}</Project>
       <Name>DugTools.WPF.MVVM</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Properties\icons\pirates.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Properties\icons\greenKey256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Properties\icons\key.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

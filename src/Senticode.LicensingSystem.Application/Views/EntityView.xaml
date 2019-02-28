@@ -17,15 +17,34 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <UniformGrid Rows="1" Grid.Row="0">
-            <CheckBox IsChecked="{Binding IsDescending}"
-                      Content="{e:Localize {x:Static if:ResourceKeys.Dec}}"
-                      HorizontalAlignment="Center" />
-            <ComboBox ItemTemplate="{StaticResource FilterTemplate}"
-                      SelectedItem="{Binding Filter, Mode=TwoWay}"
-                      ItemsSource="{Binding PropertyNames}" />
-            <TextBox Text="{Binding SearchString, UpdateSourceTrigger=PropertyChanged}" />
-        </UniformGrid>
+        <Border Grid.Row="0" BorderThickness="3" BorderBrush="Black">
+            <Grid Background="LightGray">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                <GroupBox Header="Xml" Grid.Column="0">
+                    <UniformGrid Rows="1">
+                        <Button Content="{e:Localize {x:Static if:ResourceKeys.Export}}"
+                                Command="{Binding AppCommands.ExportCommand}"
+                                CommandParameter="{Binding Type}" />
+                        <Button Content="{e:Localize {x:Static if:ResourceKeys.Import}}"
+                                Command="{Binding AppCommands.ImportCommand}"
+                                CommandParameter="{Binding Type}" />
+                    </UniformGrid>
+                </GroupBox>
+                <GroupBox Header="{e:Localize {x:Static if:ResourceKeys.Filter}}" Grid.Column="1">
+                    <UniformGrid Rows="1">
+                        <CheckBox IsChecked="{Binding IsDescending}"
+                                  Content="{e:Localize {x:Static if:ResourceKeys.Dec}}"
+                                  HorizontalAlignment="Center" />
+                        <ComboBox ItemTemplate="{StaticResource FilterTemplate}"
+                                  SelectedItem="{Binding Filter, Mode=TwoWay}"
+                                  ItemsSource="{Binding PropertyNames}" />
+                        <TextBox Text="{Binding SearchString, UpdateSourceTrigger=PropertyChanged}" />
+                    </UniformGrid>
+                </GroupBox>
+            </Grid></Border>
 
         <ListView
             Grid.Row="1"
@@ -39,8 +58,9 @@
             AlternationCount="2"
             IsSynchronizedWithCurrentItem="True"
             Padding="0 5 0 0"
-            Background="#E8E8E8"
+            Background="BlanchedAlmond"
             HorizontalContentAlignment="Stretch"
+            BorderThickness="0"
             ItemsSource="{Binding CollectionView}">
 
             <ListView.InputBindings>

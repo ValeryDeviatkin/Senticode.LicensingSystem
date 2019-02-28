@@ -9,7 +9,8 @@
                         xmlns:m="clr-namespace:Senticode.LicensingSystem.Common.Models;assembly=Senticode.LicensingSystem.Common.Models"
                         xmlns:c="clr-namespace:Senticode.LicensingSystem.Application.Converters"
                         xmlns:a="clr-namespace:Senticode.LicensingSystem.Application.Views.EditWindows.Abstraction"
-                        mc:Ignorable="d">
+                        mc:Ignorable="d"
+                        Background="#F0F0F0">
 
     <Grid>
         <Grid.RowDefinitions>

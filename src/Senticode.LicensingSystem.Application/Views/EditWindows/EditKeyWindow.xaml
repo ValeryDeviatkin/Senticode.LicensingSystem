@@ -9,7 +9,8 @@
                         xmlns:c="clr-namespace:Senticode.LicensingSystem.Application.Converters"
                         xmlns:m="clr-namespace:Senticode.LicensingSystem.Common.Models;assembly=Senticode.LicensingSystem.Common.Models"
                         xmlns:a="clr-namespace:Senticode.LicensingSystem.Application.Views.EditWindows.Abstraction"
-                        mc:Ignorable="d">
+                        mc:Ignorable="d"
+                        Background="#F0F0F0">
 
     <UniformGrid Columns="2">
         <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.KeyValue}}">

@@ -39,6 +39,10 @@
         public static readonly string Product = nameof(Product);
         public static readonly string Organization = nameof(Organization);
         public static readonly string KeyUserName = nameof(KeyUserName);
+        public static readonly string Confirm = nameof(Confirm);
+        public static readonly string Export = nameof(Export);
+        public static readonly string Import = nameof(Import);
+        public static readonly string Filter = nameof(Filter);
         //public static readonly string  = nameof();
     }
 }
