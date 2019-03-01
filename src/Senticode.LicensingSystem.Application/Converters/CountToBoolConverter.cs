@@ -6,10 +6,12 @@ using System.Windows.Markup;
 namespace Senticode.LicensingSystem.Application.Converters
 {
     [ValueConversion(typeof(int), typeof(bool))]
-    public class CountToBoolConverter : MarkupExtension, IValueConverter
+    internal class CountToBoolConverter : MarkupExtension, IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
+            if (!(value is int)) return value;
+
             if ((int) value > 0)
             {
                 return true;

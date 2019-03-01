@@ -7,10 +7,11 @@ using Boolean = Senticode.LicensingSystem.Common.Interfaces.Enums.Boolean;
 namespace Senticode.LicensingSystem.Application.Converters
 {
     [ValueConversion(typeof(Boolean), typeof(bool))]
-    public class BooleanToBoolConverter : MarkupExtension, IValueConverter
+    internal class BooleanToBoolConverter : MarkupExtension, IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
+            if (!(value is Boolean)) return value;
             return bool.Parse(value.ToString().ToLower());
         }
 

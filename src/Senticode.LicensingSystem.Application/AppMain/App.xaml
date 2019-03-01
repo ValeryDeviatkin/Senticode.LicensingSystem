@@ -35,6 +35,54 @@
         <Style BasedOn="{StaticResource {x:Type Control}}" TargetType="GroupBox">
             <Setter Property="Background" Value="Transparent" />
             <Setter Property="Padding" Value="0" />
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Trigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard SpeedRatio="6">
+                                <ColorAnimation
+                                    Storyboard.TargetProperty="BorderBrush.(SolidColorBrush.Color)"
+                                    Duration="0:0:01"
+                                    To="BlueViolet" />
+                                <ThicknessAnimation
+                                    Storyboard.TargetProperty="BorderThickness"
+                                    Duration="0:0:1"
+                                    To="2" />
+                                <ThicknessAnimation
+                                    Storyboard.TargetProperty="Padding"
+                                    Duration="0:0:1"
+                                    To="2" />
+                                <ThicknessAnimation
+                                    Storyboard.TargetProperty="Margin"
+                                    Duration="0:0:1"
+                                    To="3" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.EnterActions>
+                    <Trigger.ExitActions>
+                        <BeginStoryboard>
+                            <Storyboard SpeedRatio="6">
+                                <ColorAnimation
+                                    Storyboard.TargetProperty="BorderBrush.(SolidColorBrush.Color)"
+                                    Duration="0:0:1"
+                                    To="Black" />
+                                <ThicknessAnimation
+                                    Storyboard.TargetProperty="BorderThickness"
+                                    Duration="0:0:1"
+                                    To="1" />
+                                <ThicknessAnimation
+                                    Storyboard.TargetProperty="Padding"
+                                    Duration="0:0:1"
+                                    To="0" />
+                                <ThicknessAnimation
+                                    Storyboard.TargetProperty="Margin"
+                                    Duration="0:0:1"
+                                    To="5" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.ExitActions>
+                </Trigger>
+            </Style.Triggers>
         </Style>
 
         <Style BasedOn="{StaticResource {x:Type Control}}" TargetType="Button">
@@ -48,6 +96,12 @@
         <Style BasedOn="{StaticResource {x:Type Control}}" TargetType="GridViewColumnHeader">
             <Setter Property="Template" Value="{StaticResource GridViewColumnHeaderTemplate}" />
             <Setter Property="Margin" Value="2 0 2 5" />
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Cursor" Value="SizeAll" />
+                    <Setter Property="FontWeight" Value="Bold" />
+                </Trigger>
+            </Style.Triggers>
         </Style>
 
         <Style BasedOn="{StaticResource {x:Type Control}}" TargetType="Label">
@@ -70,9 +124,9 @@
         </Style>
 
         <Style TargetType="ToolTip" BasedOn="{StaticResource {x:Type Control}}">
+            <Setter Property="BorderBrush" Value="Red" />
             <Setter Property="Foreground" Value="Red" />
             <Setter Property="Background" Value="Black" />
-            <Setter Property="FontSize" Value="30" />
         </Style>
 
         <ControlTemplate x:Key="ValidationFailed">

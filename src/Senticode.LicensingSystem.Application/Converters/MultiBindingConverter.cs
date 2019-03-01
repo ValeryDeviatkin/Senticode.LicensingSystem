@@ -5,7 +5,7 @@ using System.Windows.Markup;
 
 namespace Senticode.LicensingSystem.Application.Converters
 {
-    public class MultiBindingConverter : MarkupExtension, IMultiValueConverter
+    internal class MultiBindingConverter : MarkupExtension, IMultiValueConverter
     {
         public override object ProvideValue(IServiceProvider serviceProvider)
         {

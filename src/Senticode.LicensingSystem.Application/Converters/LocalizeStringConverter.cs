@@ -9,7 +9,7 @@ using Senticode.LicensingSystem.Application.Extensions;
 namespace Senticode.LicensingSystem.Application.Converters
 {
     [ValueConversion(typeof(string), typeof(string))]
-    public class LocalizeStringConverter : MarkupExtension, IValueConverter
+    internal class LocalizeStringConverter : MarkupExtension, IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {

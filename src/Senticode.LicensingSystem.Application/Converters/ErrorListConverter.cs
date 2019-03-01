@@ -8,7 +8,7 @@ using System.Windows.Markup;
 namespace Senticode.LicensingSystem.Application.Converters
 {
     [ValueConversion(typeof(IEnumerable<ValidationError>), typeof(string))]
-    public class ErrorListConverter : MarkupExtension, IValueConverter
+    internal class ErrorListConverter : MarkupExtension, IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {

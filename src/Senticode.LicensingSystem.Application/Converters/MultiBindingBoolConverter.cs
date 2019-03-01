@@ -6,7 +6,7 @@ using System.Windows.Markup;
 namespace Senticode.LicensingSystem.Application.Converters
 {
     [ValueConversion(typeof(bool[]), typeof(bool))]
-    public class MultiBindingBoolConverter : MarkupExtension, IMultiValueConverter
+    internal class MultiBindingBoolConverter : MarkupExtension, IMultiValueConverter
     {
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
