@@ -96,6 +96,7 @@
     <Compile Include="Commands\AppCommands.EditCommand.cs" />
     <Compile Include="Commands\AppCommands.ExportCommand.cs" />
     <Compile Include="Commands\AppCommands.ImportCommand.cs" />
+    <Compile Include="Converters\BooleanToBoolConverter.cs" />
     <Compile Include="Converters\MultiBindingConverter.cs" />
     <Compile Include="Services\DialogProvider.cs" />
     <Compile Include="Services\EntityComparer.cs" />

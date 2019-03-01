@@ -17,7 +17,7 @@
             <TextBox Name="KeyValueBox"
                      Validation.ErrorTemplate="{StaticResource ValidationFailed}">
                 <TextBox.Text>
-                    <Binding Path="Value"
+                    <Binding Path="KeyValue"
                              NotifyOnValidationError="True"
                              UpdateSourceTrigger="PropertyChanged">
                         <Binding.ValidationRules>
@@ -59,7 +59,7 @@
             </TextBox>
         </GroupBox>
         <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.IsTestKey}}">
-            <CheckBox IsChecked="{Binding IsTestKey}" />
+            <CheckBox IsChecked="{Binding IsTestKey, Converter={c:BooleanToBoolConverter}}" />
         </GroupBox>
         <Button IsDefault="True" Click="Ok_OnClick"
                 Content="{e:Localize {x:Static i:ResourceKeys.Ok}}">

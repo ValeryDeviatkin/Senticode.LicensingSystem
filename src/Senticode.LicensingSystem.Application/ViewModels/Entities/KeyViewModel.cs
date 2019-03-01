@@ -2,6 +2,7 @@
 using Senticode.LicensingSystem.Application.ViewModels.Abstraction;
 using Senticode.LicensingSystem.Common.Models;
 using Unity;
+using Boolean = Senticode.LicensingSystem.Common.Interfaces.Enums.Boolean;
 
 namespace Senticode.LicensingSystem.Application.ViewModels.Entities
 {
@@ -120,7 +121,7 @@ namespace Senticode.LicensingSystem.Application.ViewModels.Entities
         /// <summary>
         /// Gets or sets the IsTestKey value.
         /// </summary>
-        public bool IsTestKey
+        public Boolean IsTestKey
         {
             get { return _isTestKey; }
             set { SetProperty(ref _isTestKey, value); }
@@ -129,7 +130,7 @@ namespace Senticode.LicensingSystem.Application.ViewModels.Entities
         /// <summary>
         /// IsTestKey property data.
         /// </summary>
-        private bool _isTestKey;
+        private Boolean _isTestKey;
 
         #endregion
 

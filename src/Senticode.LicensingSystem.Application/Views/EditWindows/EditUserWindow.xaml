@@ -34,22 +34,22 @@
         </GroupBox>
         <UniformGrid Columns="2" Grid.Row="1">
             <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.IsReadingAvailable}}">
-                <CheckBox IsChecked="{Binding IsReadingAvailable}" />
+                <CheckBox IsChecked="{Binding IsReadingAvailable, Converter={c:BooleanToBoolConverter}}" />
             </GroupBox>
             <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.IsWritingAvailable}}">
-                <CheckBox IsChecked="{Binding IsWritingAvailable}" />
+                <CheckBox IsChecked="{Binding IsWritingAvailable, Converter={c:BooleanToBoolConverter}}" />
             </GroupBox>
             <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.IsReadingKeysAvailable}}">
-                <CheckBox IsChecked="{Binding IsReadingKeysAvailable}" />
+                <CheckBox IsChecked="{Binding IsReadingKeysAvailable, Converter={c:BooleanToBoolConverter}}" />
             </GroupBox>
             <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.HasAccessToWorkingKeys}}">
-                <CheckBox IsChecked="{Binding HasAccessToWorkingKeys}" />
+                <CheckBox IsChecked="{Binding HasAccessToWorkingKeys, Converter={c:BooleanToBoolConverter}}" />
             </GroupBox>
             <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.HasAccessToTestKeys}}">
-                <CheckBox IsChecked="{Binding HasAccessToTestKeys}" />
+                <CheckBox IsChecked="{Binding HasAccessToTestKeys, Converter={c:BooleanToBoolConverter}}" />
             </GroupBox>
             <GroupBox Header="{e:Localize {x:Static i:ResourceKeys.IsAdmin}}">
-                <CheckBox IsChecked="{Binding IsAdmin}" />
+                <CheckBox IsChecked="{Binding IsAdmin, Converter={c:BooleanToBoolConverter}}" />
             </GroupBox>
             <Button IsDefault="True" Click="Ok_OnClick"
                     Content="{e:Localize {x:Static i:ResourceKeys.Ok}}">

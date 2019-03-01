@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\Boolean.cs" />
     <Compile Include="Enums\Param.cs" />
     <Compile Include="ResourceKeys.cs" />
     <Compile Include="Services\ICrud.cs" />

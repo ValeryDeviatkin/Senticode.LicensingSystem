@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Senticode.WPF.Tools.MVVM;
+using Boolean = Senticode.LicensingSystem.Common.Interfaces.Enums.Boolean;
 
 namespace Senticode.LicensingSystem.Common.Models
 {
@@ -126,7 +127,7 @@ namespace Senticode.LicensingSystem.Common.Models
         /// <summary>
         /// Gets or sets the IsTestKey value.
         /// </summary>
-        public bool IsTestKey
+        public Boolean IsTestKey
         {
             get { return _isTestKey; }
             set { SetProperty(ref _isTestKey, value); }
@@ -135,7 +136,7 @@ namespace Senticode.LicensingSystem.Common.Models
         /// <summary>
         /// IsTestKey property data.
         /// </summary>
-        private bool _isTestKey;
+        private Boolean _isTestKey;
 
         #endregion
 

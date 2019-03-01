@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Senticode.LicensingSystem.Common.Interfaces.Enums;
 using Senticode.WPF.Tools.MVVM;
 
 namespace Senticode.LicensingSystem.Common.Models
@@ -50,7 +51,7 @@ namespace Senticode.LicensingSystem.Common.Models
         /// <summary>
         /// Gets or sets the IsReadingAvailable value.
         /// </summary>
-        public bool IsReadingAvailable
+        public Boolean IsReadingAvailable
         {
             get { return _isReadingAvailable; }
             set { SetProperty(ref _isReadingAvailable, value); }
@@ -59,7 +60,7 @@ namespace Senticode.LicensingSystem.Common.Models
         /// <summary>
         /// IsReadingAvailable property data.
         /// </summary>
-        private bool _isReadingAvailable;
+        private Boolean _isReadingAvailable;
 
         #endregion
 
@@ -68,7 +69,7 @@ namespace Senticode.LicensingSystem.Common.Models
         /// <summary>
         /// Gets or sets the IsWritingAvailable value.
         /// </summary>
-        public bool IsWritingAvailable
+        public Boolean IsWritingAvailable
         {
             get { return _isWritingAvailable; }
             set { SetProperty(ref _isWritingAvailable, value); }
@@ -77,7 +78,7 @@ namespace Senticode.LicensingSystem.Common.Models
         /// <summary>
         /// IsWritingAvailable property data.
         /// </summary>
-        private bool _isWritingAvailable;
+        private Boolean _isWritingAvailable;
 
         #endregion
 
@@ -86,7 +87,7 @@ namespace Senticode.LicensingSystem.Common.Models
         /// <summary>
         /// Gets or sets the IsReadingKeysAvailable value.
         /// </summary>
-        public bool IsReadingKeysAvailable
+        public Boolean IsReadingKeysAvailable
         {
             get { return _isReadingKeysAvailable; }
             set { SetProperty(ref _isReadingKeysAvailable, value); }
@@ -95,7 +96,7 @@ namespace Senticode.LicensingSystem.Common.Models
         /// <summary>
         /// IsReadingKeysAvailable property data.
         /// </summary>
-        private bool _isReadingKeysAvailable;
+        private Boolean _isReadingKeysAvailable;
 
         #endregion
 
@@ -104,7 +105,7 @@ namespace Senticode.LicensingSystem.Common.Models
         /// <summary>
         /// Gets or sets the HasAccessToWorkingKeys value.
         /// </summary>
-        public bool HasAccessToWorkingKeys
+        public Boolean HasAccessToWorkingKeys
         {
             get { return _hasAccessToWorkingKeys; }
             set { SetProperty(ref _hasAccessToWorkingKeys, value); }
@@ -113,7 +114,7 @@ namespace Senticode.LicensingSystem.Common.Models
         /// <summary>
         /// HasAccessToWorkingKeys property data.
         /// </summary>
-        private bool _hasAccessToWorkingKeys;
+        private Boolean _hasAccessToWorkingKeys;
 
         #endregion
 
@@ -122,7 +123,7 @@ namespace Senticode.LicensingSystem.Common.Models
         /// <summary>
         /// Gets or sets the HasAccessToTestKeys value.
         /// </summary>
-        public bool HasAccessToTestKeys
+        public Boolean HasAccessToTestKeys
         {
             get { return _hasAccessToTestKeys; }
             set { SetProperty(ref _hasAccessToTestKeys, value); }
@@ -131,7 +132,7 @@ namespace Senticode.LicensingSystem.Common.Models
         /// <summary>
         /// HasAccessToTestKeys property data.
         /// </summary>
-        private bool _hasAccessToTestKeys;
+        private Boolean _hasAccessToTestKeys;
 
         #endregion
 
@@ -140,7 +141,7 @@ namespace Senticode.LicensingSystem.Common.Models
         /// <summary>
         /// Gets or sets the IsAdmin value.
         /// </summary>
-        public bool IsAdmin
+        public Boolean IsAdmin
         {
             get { return _isAdmin; }
             set { SetProperty(ref _isAdmin, value); }
@@ -149,7 +150,7 @@ namespace Senticode.LicensingSystem.Common.Models
         /// <summary>
         /// IsAdmin property data.
         /// </summary>
-        private bool _isAdmin;
+        private Boolean _isAdmin;
 
         #endregion
     }

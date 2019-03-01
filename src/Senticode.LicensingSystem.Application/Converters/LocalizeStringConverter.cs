@@ -20,7 +20,7 @@ namespace Senticode.LicensingSystem.Application.Converters
 
             if (value is string || value is Enum)
             {
-                return value?.ToString().L();
+                return value.ToString().L();
             }
 
             throw new NotImplementedException();
